@@ -5,7 +5,7 @@
     border-width: 5px;
 }
 
-#ddmenu ul {
+.ddmenu ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -13,11 +13,11 @@
     background-color: #333;
 }
 
-#ddmenu li {
+.ddmenu li {
     float: left;
 }
 
-#ddmenu li a {
+.ddmenu li a {
     display: block;
     color: white;
     text-align: center;
@@ -26,6 +26,28 @@
 }
 
 /* Change the link color to #111 (black) on hover */
-#ddmenu li a:hover {
+.ddmenu li a:hover {
     background-color: #111;
+}
+
+.outer-form-div {
+	padding: 2px 0px 4px 2px;
+}
+
+.inner-form-div {
+	clear: both;
+	height: 2px;
+}
+
+.form-label {
+	float: left;
+	width: 150px;
+}
+
+.form-style {
+	float:left;
+}
+
+.last-form-div {
+	font-size: 10px
 }

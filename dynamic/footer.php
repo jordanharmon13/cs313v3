@@ -1,9 +1,10 @@
-<?php ?>
-<ul>
-	<li>&copy jordanharmon.net</li>
-</ul>
+	<div class="ddmenu">
+		<ul>
+			<li>&copy jordanharmon.net</li>
+		</ul>
+	</div>
 
-</div>
+	</div>
 
 <script src="js/javascript.js"></script>
 </body>

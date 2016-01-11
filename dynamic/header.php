@@ -17,14 +17,14 @@
   <![endif]-->
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  </head>
+</head>
 
 <body>
 <div id="page-wrap">
-<nav id="ddmenu">
-    <ul>
-		<li id="about-me"><a href="index.php">About Me</a></li>
-		<li id="polls"><a href="polls.php">Polls</a></li>
-		<li id="assignments"><a href="assignments.php">Assignments</a></li>
-	</ul>
-</nav>
+	<nav class="ddmenu">
+		<ul>
+			<li id="about-me"><a href="index.php">About Me</a></li>
+			<li id="polls"><a href="#">Polls</a></li>
+			<li id="assignments"><a href="assignments.php">Assignments</a></li>		
+		</ul>
+	</nav>
