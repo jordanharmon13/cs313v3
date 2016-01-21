@@ -30,6 +30,15 @@
     background-color: #111;
 }
 
+.more-outer-form-div {
+	background-color: #EEEEEE;
+	padding: 2px;
+	width: 175px;
+	font-family: Arial;
+	font-size: small;
+	color:#000000; 
+}
+
 .outer-form-div {
 	padding: 2px 0px 4px 2px;
 }

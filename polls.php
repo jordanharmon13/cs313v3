@@ -4,7 +4,7 @@
 <div><p>This is where the polls application will be located. For the moment, we will have this application below to illustrate what I will be creating, but I will be connecting it to my own database.</p></div>
 
 <form method="post" action="http://poll.pollcode.com/44699867">
-	<div style"background-color:#EEEEEE;padding:2px;width:175px;font-family:Arial;font-size:small;color:#000000;">
+	<div class="more-outer-form-div">
 	<div class="outer-form-div">
 		<strong>Who will you vote for in 2016?</strong>
 		</div>
