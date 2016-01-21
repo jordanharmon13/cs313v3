@@ -10,7 +10,7 @@
 
   <meta name="author" content="Jordan Harmon">
 
-  <link rel="stylesheet" href="css/stylesheet.css?v=1.0">
+  <link rel="stylesheet" href="../css/stylesheet.css?v=1.0">
 
   <!--[if lt IE 9]>
   <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -23,8 +23,8 @@
 <div id="page-wrap">
 	<nav class="ddmenu">
 		<ul>
-			<li id="about-me"><a href="index.php">About Me</a></li>
+			<li id="about-me"><a href="../index.php">About Me</a></li>
 			<li id="polls"><a href="#">Polls</a></li>
-			<li id="assignments"><a href="assignments.php">Assignments</a></li>		
+			<li id="assignments"><a href="../assignments.php">Assignments</a></li>		
 		</ul>
 	</nav>
