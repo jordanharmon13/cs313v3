@@ -9,13 +9,12 @@
 
   <div>
     <p id="form"></p>
-	
   </div>
 </div>
 
 <script>
     var form = '';
-    form += '<form action="form-results.php" method="post">';
+    form += '<form action="week-2-form-results.php" method="post" id="form">';
     form += '<label for="name">Name:</label>';
     form += '<input type="text" name="name" id="name"><br>';
     form += '<label for="email">Email:</label>';
@@ -34,8 +33,8 @@
     form += '<input type="checkbox" name="places[]" value="Africa"> Africa<br>';
     form += '<input type="checkbox" name="places[]" value="Antartica"> Antartica<br>';
   	form += '<label for="comment">Comments:</label>';
-  	form += '<textarea rows="4" cols="50" name="comment" form="usrform" id="comment">';
-  	form += 'Enter text here...</textarea><br>';
+  	form += '<textarea rows="4" cols="50" name="comments" form="form" placeholder="Enter comments here.">';
+  	form += '</textarea><br>';
   	form += '<input type="submit">';
   	form += '</form>';
   	
