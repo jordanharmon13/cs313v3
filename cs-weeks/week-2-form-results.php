@@ -7,7 +7,7 @@
     The major you selected is: <?php echo $_POST["major"]; ?><br>
     You have visited the following places: <?php foreach($_POST['places'] as $selected) {
       echo $selected ?> <br> <?php; 
-    } ?><br>
+    } ?>
     Your Comments were: <?php echo htmlentities($_POST['comments']); ?>
     
     
