@@ -1,8 +1,5 @@
 <?php
-$session_start();
 require '../dynamic/header.php';
-
-$_SESSION['voted'] = 'voted';
 
 
 $answer = $_POST['question1'] . "\n" . $_POST['question2'] . "\n" . $_POST['question3'] . "\n" . $_POST['question4'];
