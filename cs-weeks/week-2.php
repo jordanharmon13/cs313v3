@@ -6,14 +6,24 @@
 
   <h2>Week 2 Form Project</h2>
   
+  <div>
+    <ul>
+      <li><a href="javascript:teamForm();">Team Assignment</a></li>
+      <li><a href="javascript:personalForm();">Personal Assignment</a></li>
+    </ul>  
+  </div>
+  
 
   <div>
     <p id="form"></p>
   </div>
 </div>
 
+
 <script>
+  function teamForm() {
     var form = '';
+    form += '<h3>Team Assignment</h3>'
     form += '<form action="week-2-form-results.php" method="post" id="forms">';
     form += '<label for="name">Name:</label>';
     form += '<input type="text" name="name" id="name"><br>';
@@ -39,6 +49,38 @@
   	form += '</form>';
   	
   	document.getElementById('form').innerHTML = form;
+  	
+  }
+  
+  function personalForm() {
+    var form = '';
+    form += '<h3>Personal Assignment</h3>';
+    
+    form += '<form action="results-form.php" method="post" id="forms-2">';
+    form += '<label for="question1">What is your favorite color?</label><br>';
+    form += '<input type="radio" name="question1" value="Red"> Red<br>';
+    form += '<input type="radio" name="question1" value="Blue"> Blue<br>';
+    form += '<input type="radio" name="question1" value="Yellow"> Yellow<br>';
+    form += '<input type="radio" name="question1" value="Green"> Green<br>';
+    form += '<label for="question2">What is your favorite animal?</label><br>';
+    form += '<input type="radio" name="question2" value="Bird"> Bird<br>';
+    form += '<input type="radio" name="question2" value="Dog"> Dog<br>';
+    form += '<input type="radio" name="question2" value="Cat"> Cat<br>';
+    form += '<input type="radio" name="question2" value="Horse"> Horse<br>';
+    form += '<label for="question3">Where were you born?</label><br>';
+    form += '<input type="radio" name="question3" value="US"> US<br>';
+    form += '<input type="radio" name="question3" value="Canada"> Canada<br>';
+    form += '<input type="radio" name="question3" value="Mexico"> Mexico<br>';
+    form += '<input type="radio" name="question3" value="Europe"> Europe<br>';
+    form += '<label for="question4">Are you married?</label><br>';
+    form += '<input type="radio" name="question4" value="Yes"> Yes<br>';
+    form += '<input type="radio" name="question4" value="No"> No<br>';
+    form += '<input type="submit">';
+    form += '</form><br>';
+    
+    form += '<p><a href="results-form.php">See Results</a></p>';
+    document.getElementById('form').innerHTML = form;
+  }
   </script>
 
 <?php require '../dynamic/footer.php'; ?>

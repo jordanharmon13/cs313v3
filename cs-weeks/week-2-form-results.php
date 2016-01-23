@@ -9,8 +9,6 @@
       echo $selected ?> <br> <?php; 
     } ?>
     Your Comments were: <?php echo htmlentities($_POST['comments']); ?>
-	
-	
     
     
   <?php require '../dynamic/footer.php'; ?>
