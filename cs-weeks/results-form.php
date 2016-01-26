@@ -1,4 +1,9 @@
 <?php
+
+session_start();
+
+$_SESSION['voted'] = 'voted';
+
 require '../dynamic/header.php';
 
 
