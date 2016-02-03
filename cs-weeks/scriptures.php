@@ -7,11 +7,11 @@
 	<input type="text">
 	<div class="scripture-power">
 	<div>
-		<form id="search-form" method="get" action="#">
+		<!--<form id="search-form" method="get" action="#">
 			<label>Book:</label>
 			<input type="text" placeholder="Search..." name="book"/>
 			<input type="submit" value="Find" form="search-form"/>
-		</form>
+		</form>-->
 	</div>
 		<ul>
 			<?php if ($_GET['book'] != '' && $_GET['book'] != NULL) {
