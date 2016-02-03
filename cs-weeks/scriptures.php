@@ -7,7 +7,7 @@
 	<input type="text">
 	<div class="scripture-power">
 	<div>
-		<form id="search-form" method="get" action="scriptures.php">
+		<form id="search-form" method="get" action="#">
 			<label>Book:</label>
 			<input type="text" placeholder="Search..." name="book"/>
 			<input type="submit" value="Find" form="search-form"/>
@@ -18,7 +18,6 @@
 				foreach ($db->query('SELECT book, chapter, verse, content FROM scriptures WHERE book = "' . $_GET['book'] . '"') as $scripture) {
 					echo '<li><strong>' . $scripture['book'] . ' ' . $scripture['chapter'] . ':' . $scripture['verse'] . '</strong> <br>' . $scripture['content'] . '<br>' . '</li>';
 				}
-				
 			} else {
 				foreach ($db->query('SELECT book, chapter, verse, content FROM scriptures') as $scripture) {
 				echo '<li><strong>' . $scripture['book'] . ' ' . $scripture['chapter'] . ':' . $scripture['verse'] . '</strong> <br>' . $scripture['content'] . '<br>' . '</li>';
