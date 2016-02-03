@@ -1,5 +1,5 @@
 <?php require ('scriptures_db.php'); ?>
-<?php require ('../dynamic/header.php');?>
+
 
 <div>
 	<h3>Week 5 Team Activity</h3>
@@ -12,4 +12,4 @@
 	</div>
 </div>
 
-<?php require ('../dynamic/footer.php');?>
+
