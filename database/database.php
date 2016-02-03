@@ -3,7 +3,7 @@ try
 {
    $user = 'adminnFUPYeR';
    $password = 'NsxAN5RdJg1j'; 
-   $db = new PDO('mysql:host=127.0.0.1;dbname=polls_db', $user, $password);
+   $db = new PDO('mysql:host=127.11.153.130:3306;dbname=cs313', $user, $password);
 }
 catch (PDOException $ex) 
 {
