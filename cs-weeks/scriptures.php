@@ -3,7 +3,7 @@
 
 <div>
 	<h3>Week 5 Team Activity</h3>
-	<div>
+	<div class="scripture-power">
 		<ul>
 			<?php foreach ($db->query('SELECT book, chapter, verse, content FROM scriptures') as $scripture) {
 				echo '<li><strong>' . $scripture['book'] . ' ' . $scripture['chapter'] . ':' . $scripture['verse'] . '</strong> <br>' . $scripture['content'] . '<br>' . '</li>';

@@ -97,3 +97,8 @@ textarea#feedback {
   width:375px;
   height:150px;
 }
+
+.scripture-power ul {
+	display: block;
+	list-style: none;
+}
