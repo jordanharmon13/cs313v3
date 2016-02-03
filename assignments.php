@@ -7,7 +7,7 @@
     <li><a href="cs-weeks/week-2.php">Week 2 Assignments</a></li>
     <li>Week 3 Assignments</li>
     <li>Week 4 Assignments</li>
-    <a href="cs-weeks/week-5/scriptures.php">Week 5 Assignments</a>
+    <a href="cs-weeks/scriptures.php">Week 5 Assignments</a>
     <li>Week 6 Assignments</li>
     <li>Week 7 Assignments</li>
     <li>Week 8 Assignments</li>
