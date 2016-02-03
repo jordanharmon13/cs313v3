@@ -1,13 +1,22 @@
 <?php
-
-$db = new PDO("mysql:host=jordanz6@localhost;dbname=poll", $user, $pass);
-	foreach($db->query('SELECT * from poll') as $row) {
-        print_r($row);
-    }
-    $dbh = null;
-} catch (PDOException $e) {
-    print "Error!: " . $e->getMessage() . "<br/>";
-    die();
+try
+{
+   $user = 'adminnFUPYeR';
+   $password = 'NsxAN5RdJg1j'; 
+   $db = new PDO('mysql:host=127.0.0.1;dbname=polls_db', $user, $password);
 }
-var_dump($db);
- ?>
+catch (PDOException $ex) 
+{
+   echo 'Error!: ' . $ex->getMessage();
+   die(); 
+}
+
+$dbHost = getenv('OPENSHIFT_MYSQL_DB_HOST'); 
+$dbPort = getenv('OPENSHIFT_MYSQL_DB_PORT'); 
+$dbUser = getenv('OPENSHIFT_MYSQL_DB_USERNAME'); 
+$dbPassword = getenv('OPENSHIFT_MYSQL_DB_PASSWORD');
+$dbName = 'cs313';
+
+echo "host:$dbHost:$dbPort dbName:$dbName user:$dbUser password:$dbPassword<br />\n"; 
+
+$db = new PDO("mysql:host=$dbHost:$dbPort;dbname=$dbName", $dbUser, $dbPassword); 
