@@ -15,7 +15,7 @@
 		<ul>
 			<?php if ($_GET['book'] != '' && $_GET['book'] != NULL) {
 				foreach ($db->query('SELECT book, chapter, verse, content FROM scriptures WHERE book LIKE "%' . $_GET['book'] . '%"') as $scripture) {
-				echo '<li><strong>' . $scripture['book'] . ' ' . $scripture['chapter'] . ':' . $scripture['verse'] . '</strong> <br>' . '"' . $scripture['content'] . '"' . '<br>' . '</li>';
+					echo '<li><strong>' . $scripture['book'] . ' ' . $scripture['chapter'] . ':' . $scripture['verse'] . '</strong> <br>' . '"' . $scripture['content'] . '"' . '<br>' . '</li>';
 				}
 			} else {
 				foreach ($db->query('SELECT book, chapter, verse, content FROM scriptures') as $scripture) {
