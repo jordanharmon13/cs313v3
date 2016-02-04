@@ -9,6 +9,12 @@
 	<div class="outer-form-div">
 		<strong>Who will you vote for in 2016?</strong>
 		</div>
+			<form>
+				<?php foreach ($db->query('SELECT id, firstname, lastname FROM candidate') as $candidate) {
+					echo '<input type="radio" class="form-style" id="' . $candidate['id'] . '" /><label for="' . $candidate['id'] . '" style="form-label">' . $candidate['firstname'] . ' ' . $candidate['lastname'] . '</label>';
+				} ?>
+			</form>
+			<?php ?>
 			<input type="radio" name="answer" value="1" id="answer446998671" class="form-style" /><label for="answer446998671" style="float:left;width:150px;">Rand Paul</label>
 			<div class="inner-form-div"></div>
 			<input type="radio" name="answer" value="2" id="answer446998672" class="form-style" /><label for="answer446998672" class="form-label">Jeb Bush</label>
