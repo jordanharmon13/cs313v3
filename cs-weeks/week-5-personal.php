@@ -19,7 +19,7 @@
 					echo '<li><strong>' . $camdodate['firstname'] . ' ' . $candidate['lastname'] . ':' . '</strong> <br>' . '<br>' . '</li>';
 				}
 			} else {
-				foreach ($db->query('SELECT firstname, lastname FROM candidate WHERE candidate LIKE "%' . $_GET['candidate'] . '%"') as $candidate) {
+				foreach ($db->query('SELECT firstname, lastname FROM candidate') as $candidate) {
 					echo '<li><strong>' . $camdodate['firstname'] . ' ' . $candidate['lastname'] . ':' . '</strong> <br>' . '<br>' . '</li>';
 				}
 			}			?>

@@ -1,3 +1,4 @@
+<?php require('database/database.php') ?>
 <?php require 'dynamic/header.php'; ?>
 
 <h1>Polls Application</h1>
