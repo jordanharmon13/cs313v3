@@ -6,6 +6,9 @@
 
 <div class="more-outer-form-div">
 	<div class="outer-form-div">
+	<?php echo $_SERVER['REQUEST_METHOD'];
+	echo $_POST['candidate'];
+	?>
 		<strong>Who will you vote for in 2016?</strong>
 			<form id="pres-poll" method="post" action="polls.php">
 				<?php foreach ($db->query('SELECT id, firstname, lastname, votes FROM candidate') as $candidate) {
