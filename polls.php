@@ -8,12 +8,13 @@
 	<div class="more-outer-form-div">
 	<div class="outer-form-div">
 		<strong>Who will you vote for in 2016?</strong>
-		</div>
-			<form>
-				<?php foreach ($db->query('SELECT id, firstname, lastname FROM candidate') as $candidate) {
-					echo '<input type="radio" class="form-style" id="' . $candidate['id'] . '" /><label for="' . $candidate['id'] . '" style="form-label">' . $candidate['firstname'] . ' ' . $candidate['lastname'] . '</label>';
+		</div class="more-outer-form-div">
+			<form id="pres-poll" method="post" action="polls.php">
+				<?php foreach ($db->query('SELECT id, firstname, lastname, votes FROM candidate') as $candidate) {
+					echo '<input name="candidate" value="' . $candidate['id'] . '" type="radio" class="form-style" id="' . $candidate['id'] . '" /><label for="' . $candidate['id'] . '" style="form-label">' . $candidate['firstname'] . ' ' . $candidate['lastname'] . '</label>';
 					echo '<div class="inner-form-div"></div>';
 				} ?>
+				<input type="submit" form="pres-poll" />
 			</form>
 		</div>
 	</div>

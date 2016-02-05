@@ -17,6 +17,10 @@ $dbUser = getenv('OPENSHIFT_MYSQL_DB_USERNAME');
 $dbPassword = getenv('OPENSHIFT_MYSQL_DB_PASSWORD');
 $dbName = 'polls_db';
 
-echo "host:$dbHost:$dbPort dbName:$dbName user:$dbUser password:$dbPassword<br />\n"; 
-
 $db = new PDO("mysql:host=$dbHost:$dbPort;dbname=$dbName", $dbUser, $dbPassword); 
+
+$method = $_SERVER['REQUEST_METHOD'];
+if ($method == "POST") {
+	$voted_for_id = $_POST["candidate"];
+	$db->query("UPDATE candidate SET votes = votes + 1 WHERE id = " . $_POST['candidate'] . ";");
+}
