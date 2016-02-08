@@ -6,15 +6,29 @@
 
 <div class="more-outer-form-div">
 	<div class="outer-form-div">
-	<?php echo $_SERVER['REQUEST_METHOD'];
-	echo $_POST['candidate'];
-	?>
 		<strong>Who will you vote for in 2016?</strong>
+		
+		<form id="search-form" method="get" action="#">
+			<label>Book:</label>
+			<input type="text" placeholder="Search..." name="book"/>
+			<input type="submit" value="Find" form="search-form"/>
+		</form>
 			<form id="pres-poll" method="post" action="polls.php">
-				<?php foreach ($db->query('SELECT id, firstname, lastname, votes FROM candidate') as $candidate) {
-					echo '<input name="candidate" value="' . $candidate['id'] . '" type="radio" class="form-style" id="' . $candidate['id'] . '" /><label for="' . $candidate['id'] . '" style="form-label">' . $candidate['firstname'] . ' ' . $candidate['lastname'] . '</label>';
-					echo '<div class="inner-form-div"></div>';
+				<?php if ($_GET['candidate'] != '' && $_GET['candidate'] != NULL) {
+					foreach ($db->query('SELECT firstname, lastname, votes FROM candidates WHERE firstname || lastname LIKE "%' . $_GET['firstname'] . ' ' . $_GET['lastname'] . '%"') as $scripture) {
+						echo '<input name="candidate" value="' . $candidate['id'] . '" type="radio" class="form-style" id="' . $candidate['id'] . '" /><label for="' . $candidate['id'] . '" style="form-label">' . $candidate['firstname'] . ' ' . $candidate['lastname'] . '</label>';
+						echo '<div class="inner-form-div"></div>';
+					}
+				} else {				
+					foreach ($db->query('SELECT id, firstname, lastname, votes FROM candidate') as $candidate) {
+						echo '<input name="candidate" value="' . $candidate['id'] . '" type="radio" class="form-style" id="' . $candidate['id'] . '" /><label for="' . $candidate['id'] . '" style="form-label">' . $candidate['firstname'] . ' ' . $candidate['lastname'] . '</label>';
+						echo '<div class="inner-form-div"></div>';
+					}
 				} ?>
+				<input type="radio" name="candidate" value="third-party" />
+				<input type="text" name="third-party-first-name" placeholder="First name" />
+				<input type="text" name="third-party-last-name" placeholder="Last name" />
+				<input type="text" name="third-party-party" placeholder="Party" />
 				<input type="submit" form="pres-poll" />
 			</form>
 		</div>
