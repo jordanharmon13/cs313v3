@@ -1,5 +1,5 @@
 <?php
-try
+/**try
 {
    $user = 'adminnFUPYeR';
    $password = 'NsxAN5RdJg1j'; 
@@ -9,8 +9,7 @@ catch (PDOException $ex)
 {
    echo 'Error!: ' . $ex->getMessage();
    die(); 
-}
-
+}*/
 $dbHost = getenv('OPENSHIFT_MYSQL_DB_HOST'); 
 $dbPort = getenv('OPENSHIFT_MYSQL_DB_PORT'); 
 $dbUser = getenv('OPENSHIFT_MYSQL_DB_USERNAME'); 
@@ -25,6 +24,7 @@ if ($method == "POST") {
 	if ($voted_for_id == "third-party") {
 		$candidate = $_POST["third-party"];
 		$db->query("INSERT INTO `candidate` (`firstname`, `lastname`, `votes`, `party`) VALUES (\"" . $_POST['third-party-first-name'] . "\", \"" . $_POST['third-party-last-name'] . "\", 1, \"" . $_POST['third-party-party'] . "\");");
+		print_r($db->errorInfo);
 	} else {
 		$db->query("UPDATE candidate SET votes = votes + 1 WHERE id = " . $_POST['candidate'] . ";");
 	}
