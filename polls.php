@@ -8,13 +8,13 @@
 	<div class="outer-form-div">
 		<strong>Who will you vote for in 2016?</strong>
 		
-		<form id="search-form" method="get" action="#">
+		<form id="search-form" method="post" action="polls.php">
 			<label>Book:</label>
 			<input type="text" placeholder="Search..." name="book"/>
 			<input type="submit" value="Find" form="search-form"/>
 		</form>
 			<form id="pres-poll" method="post" action="polls.php">
-				<?php if ($_GET['candidate'] != '' && $_GET['candidate'] != NULL) {
+				<?php if ($_POST['candidate'] != '' && $_POST['candidate'] != NULL) {
 					foreach ($db->query('SELECT firstname, lastname, votes FROM candidates WHERE firstname LIKE "%' . $_GET['firstname'] . '%"') as $candidate) {
 						echo '<input name="candidate" value="' . $candidate['id'] . '" type="radio" class="form-style" id="' . $candidate['id'] . '" /><label for="' . $candidate['id'] . '" style="form-label">' . $candidate['firstname'] . ' ' . $candidate['lastname'] . '</label>';
 						echo '<div class="inner-form-div"></div>';
