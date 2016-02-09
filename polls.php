@@ -15,7 +15,7 @@
 		</form>
 			<form id="pres-poll" method="post" action="polls.php">
 				<?php if ($_GET['candidate'] != '' && $_GET['candidate'] != NULL) {
-					foreach ($db->query('SELECT firstname, lastname, votes FROM candidates WHERE firstname LIKE "%' . $_GET['firstname'] . '%"') as $scripture) {
+					foreach ($db->query('SELECT firstname, lastname, votes FROM candidates WHERE firstname LIKE "%' . $_GET['firstname'] . '%"') as $candidate) {
 						echo '<input name="candidate" value="' . $candidate['id'] . '" type="radio" class="form-style" id="' . $candidate['id'] . '" /><label for="' . $candidate['id'] . '" style="form-label">' . $candidate['firstname'] . ' ' . $candidate['lastname'] . '</label>';
 						echo '<div class="inner-form-div"></div>';
 					}
@@ -25,7 +25,7 @@
 						echo '<div class="inner-form-div"></div>';
 					}
 				} ?>
-				<input type="radio" name="candidate" value="third-party" />
+				<input type="radio" name="candidate" value="third-party" /> Other
 				<input type="text" name="third-party-first-name" placeholder="First name" />
 				<input type="text" name="third-party-last-name" placeholder="Last name" />
 				<input type="text" name="third-party-party" placeholder="Party" />
