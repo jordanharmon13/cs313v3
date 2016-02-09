@@ -24,7 +24,7 @@ if ($method == "POST") {
 	$voted_for_id = $_POST["candidate"];
 	if ($voted_for_id == "third-party") {
 		$candidate = $_POST["third-party"];
-		$db->query("INSERT INTO `candidate`(`firstname`, `lastname`, `votes`, `party`) VALUES (" . $candidate['third-party-first-name'] . ", " . $candidate['third-party-last-name'] . " 1, " . $candidate['third-party-party'] . ";");
+		$db->query("INSERT INTO `candidate` (`firstname`, `lastname`, `votes`, `party`) VALUES (\"" . $_POST['third-party-first-name'] . "\", \"" . $_POST['third-party-last-name'] . "\", 1, \"" . $_POST['third-party-party'] . "\");");
 	} else {
 		$db->query("UPDATE candidate SET votes = votes + 1 WHERE id = " . $_POST['candidate'] . ";");
 	}
