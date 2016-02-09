@@ -19,11 +19,14 @@ $dbName = 'polls_db';
 $db = new PDO("mysql:host=$dbHost:$dbPort;dbname=$dbName", $dbUser, $dbPassword); 
 
 $method = $_SERVER['REQUEST_METHOD'];
+echo "Method" . $method;
 if ($method == "POST") {
 	$voted_for_id = $_POST["candidate"];
 	if ($voted_for_id == "third-party") {
-		$candidate = $_POST["third-party"];
-		$db->query("INSERT INTO `candidate` (`firstname`, `lastname`, `votes`, `party`) VALUES (\"" . $_POST['third-party-first-name'] . "\", \"" . $_POST['third-party-last-name'] . "\", 1, \"" . $_POST['third-party-party'] . "\");");
+		echo "Third Party! ";
+		$query = "INSERT INTO `candidate` (`firstname`, `lastname`, `votes`, `party`) VALUES (\"" . $_POST['third-party-first-name'] . "\", \"" . $_POST['third-party-last-name'] . "\", 1, \"" . $_POST['third-party-party'] . "\");";
+		echo "Insert query " . $query;
+		$db->query($query);
 		print_r($db->errorInfo);
 	} else {
 		$db->query("UPDATE candidate SET votes = votes + 1 WHERE id = " . $_POST['candidate'] . ";");
