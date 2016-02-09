@@ -22,7 +22,7 @@ $method = $_SERVER['REQUEST_METHOD'];
 echo "Method" . $method;
 if ($method == "POST") {
 	$voted_for_id = $_POST["candidate"];
-	if ($voted_for_id == "third-party") {
+	if ($_POST['third-party-first-name'] != "" && $_POST['third-party-first-name'] != NULL) {
 		echo "Third Party! ";
 		$query = "INSERT INTO `candidate` (`firstname`, `lastname`, `votes`, `party`) VALUES (\"" . $_POST['third-party-first-name'] . "\", \"" . $_POST['third-party-last-name'] . "\", 1, \"" . $_POST['third-party-party'] . "\");";
 		echo "Insert query " . $query;

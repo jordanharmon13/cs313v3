@@ -25,7 +25,7 @@
 						echo '<div class="inner-form-div"></div>';
 					}
 				} ?>
-				<input type="radio" name="candidate" value="third-party" /> Other
+				Enter Alternate Candidate
 				<input type="text" name="third-party-first-name" placeholder="First name" />
 				<input type="text" name="third-party-last-name" placeholder="Last name" />
 				<input type="text" name="third-party-party" placeholder="Party" />
