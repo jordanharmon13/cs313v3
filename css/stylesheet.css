@@ -102,3 +102,8 @@ textarea#feedback {
 	display: block;
 	list-style: none;
 }
+
+.inline-input {
+	display: inline;
+}
+}

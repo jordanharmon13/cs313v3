@@ -84,7 +84,7 @@ if (isset($_POST['topic'])) {
                         
                             <?php
                             foreach ($db->query('SELECT id, name FROM topics ORDER BY name ASC') as $topic) {
-                                echo '<input type="checkbox" name="topic[]" value="' . $topic['name'] . '" /> ' . $topic['name'] . '<br>';
+                                echo '<input class="inline-input" type="checkbox" name="topic[]" value="' . $topic['name'] . '" /> ' . $topic['name'] . '<br>';
                             }
                             ?>
                             <li><input type="checkbox" name="other" id="other" /> 
