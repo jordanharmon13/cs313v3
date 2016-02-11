@@ -80,7 +80,7 @@ if (isset($_POST['topic'])) {
                         <label>Content:</label><br>
                         <textarea rows="5" cols="70" name="content" class="w3-input" required="required"></textarea><br>
 
-                        <label>Topics:</label>
+                        <label>Topics:</label><br>
                         
                             <?php
                             foreach ($db->query('SELECT id, name FROM topics ORDER BY name ASC') as $topic) {
