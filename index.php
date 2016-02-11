@@ -6,8 +6,8 @@
 	
 	<p>Below you can learn a little more about me and what I enjoy doing with my life.</p>
 	
-	<iframe width="560" height="315" src="https://www.youtube.com/embed/Bk4mKOGVs6Y" frameborder="0" allowfullscreen></iframe>
+	<iframe class="img-responsive" width="560" height="315" src="https://www.youtube.com/embed/Bk4mKOGVs6Y" frameborder="0" allowfullscreen></iframe>
 	<h2>My Family</h2>
-	<p><img src="img/DSC_0893.JPG" height="350" width="500"></p>
+	<p><img class="img-responsive" src="img/DSC_0893.JPG" height="350" width="500"></p>
 		
 	<?php require 'dynamic/footer.php'; ?>

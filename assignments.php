@@ -1,7 +1,7 @@
 <?php require 'dynamic/header.php'; ?>
 
 <h1 id="main-h1">Assignments</h1>
-
+<div class="container-fluid">
 <div>
   <ul>
     <li><a href="cs-weeks/week-2.php">Week 2 Assignments</a></li>
@@ -16,6 +16,8 @@
     <li>Week 11 Assignments</li>
 
   </ul>
+
+</div>
 </div>
 
 <?php require 'dynamic/footer.php'; ?>
