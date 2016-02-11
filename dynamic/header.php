@@ -25,7 +25,7 @@
 </head>
 
 <body>
-<div id="page-wrap">
+<div class="container">
 	<nav class="ddmenu">
 		<ul>
 			<li id="about-me"><a href="../index.php">About Me</a></li>
