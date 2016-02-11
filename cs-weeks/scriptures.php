@@ -81,15 +81,14 @@ if (isset($_POST['topic'])) {
                         <textarea rows="5" cols="70" name="content" class="w3-input" required="required"></textarea><br>
 
                         <label>Topics:</label>
-                        <ul class="w3-ul">
+                        
                             <?php
                             foreach ($db->query('SELECT id, name FROM topics ORDER BY name ASC') as $topic) {
-                                echo '<li><input type="checkbox" name="topic[]" value="' . $topic['name'] . '" /> ' . $topic['name'] . '</li>';
+                                echo '<input type="checkbox" name="topic[]" value="' . $topic['name'] . '" /> ' . $topic['name'] . '<br>';
                             }
                             ?>
                             <li><input type="checkbox" name="other" id="other" /> 
                                 <input type="text" id="newtopic" name="newtopic" placeholder=" New Topic..." disabled=""/></li>
-                        </ul>
                         <br/>
                         <input type="submit" form="addScript" value="Add Scripture" class="w3-btn"/>
 
