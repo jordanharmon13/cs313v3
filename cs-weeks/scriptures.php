@@ -77,8 +77,8 @@ if (isset($_POST['topic'])) {
                         <label>Verse:</label>
                         <input type="number" class="w3-input" name="verse" required="required"/>
 
-                        <label>Content:</label>
-                        <textarea rows="5" cols="70" name="content" class="w3-input" required="required"></textarea>
+                        <label>Content:</label><br>
+                        <textarea rows="5" cols="70" name="content" class="w3-input" required="required"></textarea><br>
 
                         <label>Topics:</label>
                         <ul class="w3-ul">
