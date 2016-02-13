@@ -9,5 +9,7 @@
 	<iframe class="img-responsive" width="560" height="315" src="https://www.youtube.com/embed/Bk4mKOGVs6Y" frameborder="0" allowfullscreen></iframe>
 	<h2>My Family</h2>
 	<p><img class="img-responsive" src="img/DSC_0893.JPG" height="350" width="500"></p>
+	
+	<p>note here</p>
 		
 	<?php require 'dynamic/footer.php'; ?>
