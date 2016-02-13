@@ -12,7 +12,7 @@
 			<div class="form-group">
 				<label>Reports:</label>
 				<input class="form-control" type="text" placeholder="Search..." name="firstname"/>
-				<input class="form-control" type="submit" value="Find" form="search-form"/>
+				<input class="btn btn-default" type="submit" value="Find" form="search-form"/>
 			</div>
 		</form>
 			<form id="pres-poll" method="post" action="polls.php">
@@ -26,10 +26,12 @@
 					}
 				} ?>
 				<strong>Enter Alternate Candidate</strong><br>
-				<input type="text" name="third-party-first-name" placeholder="First name" />
-				<input type="text" name="third-party-last-name" placeholder="Last name" />
-				<input type="text" name="third-party-party" placeholder="Party" />
-				<input type="submit" form="pres-poll" />
+				<div class="form-group">
+					<input type="text" name="third-party-first-name" placeholder="First name" />
+					<input type="text" name="third-party-last-name" placeholder="Last name" />
+					<input type="text" name="third-party-party" placeholder="Party" />
+					<input class="btn btn-default" type="submit" form="pres-poll" />
+				</div>
 			</form>
 		</div>
 	</div>
