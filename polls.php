@@ -26,12 +26,14 @@
 					}
 				} ?>
 				<strong>Enter Alternate Candidate</strong><br>
-				<div class="form-group">
-					<input type="text" name="third-party-first-name" placeholder="First name" />
-					<input type="text" name="third-party-last-name" placeholder="Last name" />
-					<input type="text" name="third-party-party" placeholder="Party" />
-					<input class="btn btn-default" type="submit" form="pres-poll" />
-				</div>
+				<form class="form-inline">
+					<div class="form-group">
+						<input type="text" name="third-party-first-name" placeholder="First name" />
+						<input type="text" name="third-party-last-name" placeholder="Last name" />
+						<input type="text" name="third-party-party" placeholder="Party" />
+						<input class="btn btn-default" type="submit" form="pres-poll" />
+					</div>
+				</form>
 			</form>
 		</div>
 	</div>
