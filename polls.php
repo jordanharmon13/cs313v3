@@ -36,5 +36,6 @@
 		</form>
 	</div>
 </div>
+<p><a href="results.php">Results</a></p>
 
 <?php require 'dynamic/footer.php'; ?>
