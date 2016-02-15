@@ -1,8 +1,7 @@
 <?php require('database/database.php') ?>
 <?php require 'dynamic/header.php'; ?>
 
-<?php $candidate_info = $db->query('SELECT id, firstname, lastname, votes, party FROM candidate ORDER BY "votes" DESC'; 
-print_r($candidate_info['firstname'];?>
+<?php $candidate_info = $db->query('SELECT id, firstname, lastname, votes, party FROM candidate'); ?>
 
 <h1>Results</h1>
 <h3>Run Reports</h3>
