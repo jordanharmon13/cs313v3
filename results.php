@@ -1,9 +1,11 @@
 <?php require('database/database.php') ?>
 <?php require 'dynamic/header.php'; ?>
 
-<?php $candidate_info = ();
-candidate_info += $db->query('SELECT id, firstname, lastname, votes, party FROM candidate'); 
-print_r($candidate_info['id']); ?>
+<?php foreach ($db->query('SELECT id, firstname, lastname, votes, party FROM candidate ORDER BY "votes" DESC') as $candidate) {
+	if($_POST['report-options'] == 'name') {
+		echo 'This is name';
+	} '<ul><li>' . $candidate['firstname'] . ' ' . $candidate['lastname'] . '</li></ul>';
+} ?>
 
 <h1>Results</h1>
 <h3>Run Reports</h3>
