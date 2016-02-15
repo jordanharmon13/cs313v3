@@ -7,7 +7,6 @@
 <a class="btn btn-default" href="results.php" role="button">Run Reports</a>
 
 	<div>
-		<strong>Who will you vote for in 2016?</strong>
 		
 		<form id="search-form" method="post" action="polls.php">
 			<div class="form-group">
@@ -17,6 +16,7 @@
 			</div>
 		</form>
 		<form id="pres-poll" method="post" action="polls.php">
+		<h3><strong>Who will you vote for in 2016?</strong></h3>
 			<?php if ($_POST['firstname'] != '' && $_POST['firstname'] != NULL) {
 				foreach ($db->query('SELECT firstname, lastname, votes FROM candidate WHERE firstname LIKE "%' . $_POST['firstname'] . '%"') as $candidate) {
 					echo '<div class="radio"><label><input name="candidate" value="' . $candidate['id'] . '" type="radio" class="form-control" id="' . $candidate['id'] . '" />' . $candidate['firstname'] . ' ' . $candidate['lastname'] . '</label></div><br>';
