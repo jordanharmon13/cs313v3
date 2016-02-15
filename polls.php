@@ -4,6 +4,8 @@
 <h1>Polls Application</h1>
 <div><p>This is where the polls application will be located. For the moment, we will have this application below to illustrate what I will be creating, but I will be connecting it to my own database.</p></div>
 <div class="container-fluid">
+<a class="btn btn-default" href="results.php" role="button">Run Reports</a>
+
 	<div>
 		<strong>Who will you vote for in 2016?</strong>
 		
@@ -36,6 +38,4 @@
 		</form>
 	</div>
 </div>
-<p><a href="results.php">Run Reports</a></p>
-
 <?php require 'dynamic/footer.php'; ?>

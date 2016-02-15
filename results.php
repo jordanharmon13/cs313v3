@@ -2,6 +2,7 @@
 <?php require 'dynamic/header.php'; ?>
 
 <h1>Results</h1>
+<h3>Run Reports</h3>
 	<form name="reports" method="post" action="results.php">
 		<div class="form-group">
 		  <select name="report-options">
