@@ -20,11 +20,11 @@
 			<?php if ($_POST['firstname'] != '' && $_POST['firstname'] != NULL) { ?>
 			<div class="radio">
 			<?php foreach ($db->query('SELECT firstname, lastname, votes FROM candidate WHERE firstname LIKE "%' . $_POST['firstname'] . '%"') as $candidate) {
-					echo '<label><input name="candidate" value="' . $candidate['id'] . '" type="radio" class="form-control" id="' . $candidate['id'] . '" />' . $candidate['firstname'] . ' ' . $candidate['lastname'] . '</label>';
+					echo '<label class="radio-inline"><input name="candidate" value="' . $candidate['id'] . '" type="radio" class="form-control" id="' . $candidate['id'] . '" />' . $candidate['firstname'] . ' ' . $candidate['lastname'] . '</label><br>';
 				} ?>
 			<?php } else {
 				foreach ($db->query('SELECT id, firstname, lastname, votes FROM candidate') as $candidate) {
-					echo '<label><input name="candidate" value="' . $candidate['id'] . '" type="radio" class="form-control" id="' . $candidate['id'] . '" />' . $candidate['firstname'] . ' ' . $candidate['lastname'] . '</label>';
+					echo '<label class="radio-inline"><input name="candidate" value="' . $candidate['id'] . '" type="radio" class="form-control" id="' . $candidate['id'] . '" />' . $candidate['firstname'] . ' ' . $candidate['lastname'] . '</label><br>';
 				} ?>
 			</div>
 			<?php } ?>
