@@ -1,13 +1,15 @@
 <?php 
 require('database/database.php');
 require 'dynamic/header.php';
-global $total_votes = 0;
+$total_votes = 0;
 
 foreach ($db->query('SELECT votes FROM candidate') as $vote) {
 	$total_votes += $vote;
+	print_r($total_votes);
 } 
 
 foreach ($db->query('SELECT id, firstname, lastname, votes, party FROM candidate ORDER BY "votes" DESC') as $candidate) {
+	print_r($total_votes);
 	$vote_per = $candidate['votes']/$total_votes * 100;
 	if($_POST['report-options'] == 'name') {
 		echo '<ul><li>' . $candidate['firstname'] . ' ' . $candidate['lastname'] . '</li></ul>';
