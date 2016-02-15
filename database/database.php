@@ -28,3 +28,8 @@ if ($method == "POST") {
 		$db->query("UPDATE candidate SET votes = votes + 1 WHERE id = " . $_POST['candidate'] . ";");
 	}
 }
+
+foreach ($db->query('SELECT votes FROM candidate') as $vote) {
+	$total_votes = 0;
+	$total_votes += $vote;
+} 
