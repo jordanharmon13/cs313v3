@@ -1,7 +1,7 @@
 <?php require('database/database.php') ?>
 <?php require 'dynamic/header.php'; ?>
 
-<?php $candidate_info = $db->query('SELECT * FROM candidate'); 
+<?php $candidate_info = $db->query('SELECT * FROM candidate WHERE "votes" > 0'); 
 print_r($candidate_info['firstname']); ?>
 
 <h1>Results</h1>
