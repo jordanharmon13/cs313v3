@@ -13,7 +13,7 @@
 		echo '<ul><li>' . $candidate['firstname'] . ' ' . $candidate['lastname'] . ' - Candidate ID is ' . $candidate['id'] . '</li></ul>';
 	}
 }?>
-<table>
+<table border="1">
 	<tr>
 		<th>Name</th>
 		<td>Donald Trump</td>
