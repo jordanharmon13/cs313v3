@@ -31,7 +31,7 @@
 				<div class="form-group">
 					<input type="text" name="third-party-first-name" placeholder="First name" />
 					<input type="text" name="third-party-last-name" placeholder="Last name" />
-					<select name="third-party-party">
+					<select name="third-party-party" class="form-control">
 						<option value="Libertarian" name="name">Libertarian</option>
 						<option value="Constitutionalist" name="votes">Constitutionalist</option>
 						<option value="Socialist" name="party">Socialist</option>
