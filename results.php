@@ -3,28 +3,31 @@ require('database/database.php');
 require 'dynamic/header.php';
 $total_votes = 0;
 
-foreach ($db->query('SELECT votes FROM candidate') as $vote) {
-	$total_votes += $vote;
-	print_r($total_votes);
-} 
-
-foreach ($db->query('SELECT id, firstname, lastname, votes, party FROM candidate ORDER BY "votes" DESC') as $candidate) {
-	print_r($total_votes);
-	$vote_per = $candidate['votes']/$total_votes * 100;
-	if($_POST['report-options'] == 'name') {
-		echo '<ul><li>' . $candidate['firstname'] . ' ' . $candidate['lastname'] . '</li></ul>';
-	} else if ($_POST['report-options'] == 'votes') {
-		echo '<ul><li>' . $candidate['firstname'] . ' ' . $candidate['lastname'] . ' - Candidate Vote Count is ' . $candidate['votes'] . '</li></ul>';
-	} else if ($_POST['report-options'] == 'party') {
-		echo '<ul><li>' . $candidate['firstname'] . ' ' . $candidate['lastname'] . ' - Candiate Party is ' . $candidate['party'] . '</li></ul>';
-	} else if ($_POST['report-options'] == 'id') {
-		echo '<ul><li>' . $candidate['firstname'] . ' ' . $candidate['lastname'] . ' - Candidate ID is ' . $candidate['id'] . '</li></ul>';
-	} else if ($_POST['report-options'] == 'poll-results') {
+function results() {
+	foreach ($db->query('SELECT votes FROM candidate') as $vote) {
+		$vote;
+		print_r($votes);
+	} 
+	
+	foreach ($db->query('SELECT id, firstname, lastname, votes, party FROM candidate ORDER BY "votes" DESC') as $candidate) {
+		print_r($total_votes);
 		$vote_per = $candidate['votes']/$total_votes * 100;
-		echo '<div>' . $candidate['firstname'] . ' ' . $candidate['lastname'] . $vote_per . '% <progress max="100" value="' . $vote_per . '"></progress></div>';
+		if($_POST['report-options'] == 'name') {
+			echo '<ul><li>' . $candidate['firstname'] . ' ' . $candidate['lastname'] . '</li></ul>';
+		} else if ($_POST['report-options'] == 'votes') {
+			echo '<ul><li>' . $candidate['firstname'] . ' ' . $candidate['lastname'] . ' - Candidate Vote Count is ' . $candidate['votes'] . '</li></ul>';
+		} else if ($_POST['report-options'] == 'party') {
+			echo '<ul><li>' . $candidate['firstname'] . ' ' . $candidate['lastname'] . ' - Candiate Party is ' . $candidate['party'] . '</li></ul>';
+		} else if ($_POST['report-options'] == 'id') {
+			echo '<ul><li>' . $candidate['firstname'] . ' ' . $candidate['lastname'] . ' - Candidate ID is ' . $candidate['id'] . '</li></ul>';
+		} else if ($_POST['report-options'] == 'poll-results') {
+			$vote_per = $candidate['votes']/$total_votes * 100;
+			echo '<div>' . $candidate['firstname'] . ' ' . $candidate['lastname'] . $vote_per . '% <progress max="100" value="' . $vote_per . '"></progress></div>';
+		}
 	}
 }
-print_r($total_votes); ?>
+
+results(); ?>
 <!--
 <table border="1">
 	<tr>
