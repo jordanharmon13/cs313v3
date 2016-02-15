@@ -1,9 +1,6 @@
 <?php require('database/database.php') ?>
 <?php require 'dynamic/header.php'; ?>
 
-<?php $candidates[] = $db->query('SELECT id, firstname, lastname, votes, party FROM candidate ORDER BY "votes" DESC';
-echo '<p>' . $candidates . '</p>'; ?>
-
 <?php foreach ($db->query('SELECT id, firstname, lastname, votes, party FROM candidate ORDER BY "votes" DESC') as $candidate) {
 	if($_POST['report-options'] == 'name') {
 		echo '';
@@ -16,6 +13,7 @@ echo '<p>' . $candidates . '</p>'; ?>
 		echo '<ul><li>' . $candidate['firstname'] . ' ' . $candidate['lastname'] . ' - Candidate ID is ' . $candidate['id'] . '</li></ul>';
 	}
 }?>
+<!--
 <table border="1">
 	<tr>
 		<th>Name</th>
@@ -28,6 +26,7 @@ echo '<p>' . $candidates . '</p>'; ?>
 		<td>20</td>
 	</tr>
 </table>
+-->
 <h1>Results</h1>
 <h3>Run Reports</h3>
 	<form name="reports" method="post" action="results.php">
@@ -37,6 +36,7 @@ echo '<p>' . $candidates . '</p>'; ?>
 			<option value="votes" name="votes">By Votes</option>
 			<option value="party" name="party">By Party</option>
 			<option value="id" name="id">By ID</option>
+			<option value="poll-results" name="poll-results">Poll Results</option>
 		  </select>
 		  <br><br>
 		  <input class="btn btn-default" name="reports" type="submit">
