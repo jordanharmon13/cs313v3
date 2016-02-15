@@ -5,11 +5,11 @@
 	if($_POST['report-options'] == 'name') {
 		echo '<ul><li>' . $candidate['firstname'] . ' ' . $candidate['lastname'] . '</li></ul>';
 	} else if ($_POST['report-options'] == 'votes') {
-		'<ul><li>' . $candidate['firstname'] . ' ' . $candidate['lastname'] . ' - Candidate Vote Count is ' . $candidate['votes'] . '</li></ul>';
+		echo '<ul><li>' . $candidate['firstname'] . ' ' . $candidate['lastname'] . ' - Candidate Vote Count is ' . $candidate['votes'] . '</li></ul>';
 	} else if ($_POST['report-options'] == 'party') {
-		'<ul><li>' . $candidate['firstname'] . ' ' . $candidate['lastname'] . ' - Candiate Party is ' . $candidate['party'] . '</li></ul>';
+		echo '<ul><li>' . $candidate['firstname'] . ' ' . $candidate['lastname'] . ' - Candiate Party is ' . $candidate['party'] . '</li></ul>';
 	} else {
-		'<ul><li>' . $candidate['firstname'] . ' ' . $candidate['lastname'] . ' - Candidate ID is ' . $candidate['id'] . '</li></ul>';
+		echo '<ul><li>' . $candidate['firstname'] . ' ' . $candidate['lastname'] . ' - Candidate ID is ' . $candidate['id'] . '</li></ul>';
 	}?>
 
 <h1>Results</h1>
