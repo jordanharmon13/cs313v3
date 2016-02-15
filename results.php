@@ -5,7 +5,8 @@ $total_votes = 0;
 
 foreach ($db->query('SELECT votes FROM candidate') as $vote) {
 	$total_votes += $vote;
-}?>
+} 
+print_r($total_votes); ?>
 
 <?php foreach ($db->query('SELECT id, firstname, lastname, votes, party FROM candidate ORDER BY "votes" DESC') as $candidate) {
 	$vote_per = $candidate['votes']/$total_votes * 100;
@@ -21,7 +22,7 @@ foreach ($db->query('SELECT votes FROM candidate') as $vote) {
 		$vote_per = $candidate['votes']/$total_votes * 100;
 		echo '<div>' . $candidate['firstname'] . ' ' . $candidate['lastname'] . $vote_per . '% <progress max="100" value="' . $vote_per . '"></progress></div>';
 	}
-}?>
+} ?>
 <!--
 <table border="1">
 	<tr>
