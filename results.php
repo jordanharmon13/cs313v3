@@ -3,12 +3,11 @@ require('database/database.php');
 require 'dynamic/header.php';
 $total_votes = 0;
 
-foreach ($db->query('SELECT votes FROM candidate') as $vote) {
-	global $total_votes;
-	$total_votes += $vote;
-} 
-
 foreach ($db->query('SELECT id, firstname, lastname, votes, party FROM candidate ORDER BY "votes" DESC') as $candidate) {
+	foreach ($candidate['votes'] as $vote) {
+		global $total_votes;
+		$total_votes += $vote;
+	}
 	print_r($total_votes);
 	$vote_per = $candidate['votes']/$total_votes * 100;
 	if($_POST['report-options'] == 'name') {
