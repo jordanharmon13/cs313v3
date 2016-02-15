@@ -1,7 +1,12 @@
 <?php 
 require('database/database.php');
 require 'dynamic/header.php';
-$total_votes = 0;
+global $total_votes = 0;
+global $vote;
+
+foreach ($db->query('SELECT votes FROM candidate') as $vote) {
+	$total_votes += $vote;
+} 
 
 foreach ($db->query('SELECT id, firstname, lastname, votes, party FROM candidate ORDER BY "votes" DESC') as $candidate) {
 	$vote_per = $candidate['votes']/$total_votes * 100;
