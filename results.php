@@ -3,9 +3,14 @@
 
 <?php foreach ($db->query('SELECT id, firstname, lastname, votes, party FROM candidate ORDER BY "votes" DESC') as $candidate) {
 	if($_POST['report-options'] == 'name') {
-		echo 'This is name';
-	} '<ul><li>' . $candidate['firstname'] . ' ' . $candidate['lastname'] . '</li></ul>';
-} ?>
+		echo '<ul><li>' . $candidate['firstname'] . ' ' . $candidate['lastname'] . '</li></ul>';
+	} else if ($_POST['report-options'] == 'votes') {
+		'<ul><li>' . $candidate['firstname'] . ' ' . $candidate['lastname'] . ' - Candidate Vote Count is ' . $candidate['votes'] . '</li></ul>';
+	} else if ($_POST['report-options'] == 'party') {
+		'<ul><li>' . $candidate['firstname'] . ' ' . $candidate['lastname'] . ' - Candiate Party is ' . $candidate['party'] . '</li></ul>';
+	} else {
+		'<ul><li>' . $candidate['firstname'] . ' ' . $candidate['lastname'] . ' - Candidate ID is ' . $candidate['id'] . '</li></ul>';
+	}?>
 
 <h1>Results</h1>
 <h3>Run Reports</h3>
