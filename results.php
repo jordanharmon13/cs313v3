@@ -10,7 +10,8 @@
 		echo '<ul><li>' . $candidate['firstname'] . ' ' . $candidate['lastname'] . ' - Candiate Party is ' . $candidate['party'] . '</li></ul>';
 	} else {
 		echo '<ul><li>' . $candidate['firstname'] . ' ' . $candidate['lastname'] . ' - Candidate ID is ' . $candidate['id'] . '</li></ul>';
-	}?>
+	}
+}?>
 
 <h1>Results</h1>
 <h3>Run Reports</h3>
