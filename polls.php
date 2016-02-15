@@ -36,6 +36,7 @@
 						<option value="Constitutionalist" name="votes">Constitutionalist</option>
 						<option value="Socialist" name="party">Socialist</option>
 						<option value="Communist" name="id">Communist</option>
+						<option value="Other" name="other">Other</option>
 					 </select>
 					<input class="btn btn-default" type="submit" form="pres-poll" />
 				</div>

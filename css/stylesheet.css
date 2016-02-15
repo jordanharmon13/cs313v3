@@ -23,19 +23,6 @@
     background-color: #111;
 }
 
-.candidates ul {
-	display: block;
-	list-style: none;
-}
-
-.inline-input {
-	display: inline;
-}
-
-.form-control {
-	margin-bottom: 10px;
-}
-
 @grid-columns:              12;
 @grid-gutter-width:         30px;
 @grid-float-breakpoint:     768px;
