@@ -19,11 +19,11 @@
 		<form id="pres-poll" method="post" action="polls.php">
 			<?php if ($_POST['firstname'] != '' && $_POST['firstname'] != NULL) {
 				foreach ($db->query('SELECT firstname, lastname, votes FROM candidate WHERE firstname LIKE "%' . $_POST['firstname'] . '%"') as $candidate) {
-					echo '<div class="radio"><label for="' . $candidate['id'] . '">' . $candidate['firstname'] . ' ' . $candidate['lastname'] . '</label><input name="candidate" value="' . $candidate['id'] . '" type="radio" class="form-control" id="' . $candidate['id'] . '" /></div>';
+					echo '<div><label for="' . $candidate['id'] . '">' . $candidate['firstname'] . ' ' . $candidate['lastname'] . '</label><input name="candidate" value="' . $candidate['id'] . '" type="radio" class="form-control" id="' . $candidate['id'] . '" /></div>';
 				}
 			} else {				
 				foreach ($db->query('SELECT id, firstname, lastname, votes FROM candidate') as $candidate) {
-					echo '<div class="radio"><label for="' . $candidate['id'] . '">' . $candidate['firstname'] . ' ' . $candidate['lastname'] . '</label><input name="candidate" value="' . $candidate['id'] . '" type="radio" class="form-control" id="' . $candidate['id'] . '" /></div>';
+					echo '<div><label for="' . $candidate['id'] . '">' . $candidate['firstname'] . ' ' . $candidate['lastname'] . '</label><input name="candidate" value="' . $candidate['id'] . '" type="radio" class="form-control" id="' . $candidate['id'] . '" /></div>';
 				}
 			} ?>
 			<strong>Enter Alternate Candidate</strong><br>
