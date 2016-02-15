@@ -3,6 +3,7 @@
 
 <?php foreach ($db->query('SELECT id, firstname, lastname, votes, party FROM candidate ORDER BY "votes" DESC') as $candidate) {
 	if($_POST['report-options'] == 'name') {
+		echo '';
 		echo '<ul><li>' . $candidate['firstname'] . ' ' . $candidate['lastname'] . '</li></ul>';
 	} else if ($_POST['report-options'] == 'votes') {
 		echo '<ul><li>' . $candidate['firstname'] . ' ' . $candidate['lastname'] . ' - Candidate Vote Count is ' . $candidate['votes'] . '</li></ul>';
@@ -12,7 +13,18 @@
 		echo '<ul><li>' . $candidate['firstname'] . ' ' . $candidate['lastname'] . ' - Candidate ID is ' . $candidate['id'] . '</li></ul>';
 	}
 }?>
-
+<table>
+	<tr>
+		<th>Name</th>
+		<td>Donald Trump</td>
+		<td>Ted Cruz</td>
+	</tr>
+	<tr>
+		<th>Votes</th>
+		<td>10</td>
+		<td>20</td>
+	</tr>
+</table>
 <h1>Results</h1>
 <h3>Run Reports</h3>
 	<form name="reports" method="post" action="results.php">
@@ -24,7 +36,7 @@
 			<option value="id" name="id">By ID</option>
 		  </select>
 		  <br><br>
-		  <input name="reports" type="submit">
+		  <input class="btn btn-default" name="reports" type="submit">
 		</div>
 	</form>
 
