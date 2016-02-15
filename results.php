@@ -1,7 +1,7 @@
 <?php require('database/database.php') ?>
 <?php require 'dynamic/header.php'; ?>
 
-<?php $candidate_info = $db->query('SELECT id, firstname, lastname, votes, party FROM candidate'); 
+<?php $candidate_info = $db->query('SELECT * FROM candidate'); 
 print_r($candidate_info['firstname']); ?>
 
 <h1>Results</h1>
