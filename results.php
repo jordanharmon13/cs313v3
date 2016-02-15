@@ -4,9 +4,8 @@
 <h1>Results</h1>
 
 <div>
-<?php foreach ($db->query('SELECT firstname, lastname, votes, party FROM candidate') as $candidate) {
+<?php foreach ($db->query('SELECT id, firstname, lastname, votes, party FROM candidate ORDER BY "votes" DESC') as $candidate) {
 	echo '<ul><li>' . $candidate['id'] . '</li></ul>';
-	print_r($candidate);
 }
 print_r($candidate);
  ?>
