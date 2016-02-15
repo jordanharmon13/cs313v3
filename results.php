@@ -5,7 +5,7 @@
 
 <div>
 <?php foreach ($db->query('SELECT id, firstname, lastname, votes, party FROM candidate ORDER BY "votes" DESC') as $candidate) {
-	echo '<ul><li>' . $candidate['id'] . '</li></ul>';
+	echo '<ul><li>' . $candidate['firstname'] . ' ' . $candidate['lastname'] . '</li></ul>';
 }
 print_r($candidate);
  ?>
