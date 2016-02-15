@@ -1,6 +1,9 @@
 <?php require('database/database.php') ?>
 <?php require 'dynamic/header.php'; ?>
 
+<?php $candidates[] = $db->query('SELECT id, firstname, lastname, votes, party FROM candidate ORDER BY "votes" DESC';
+echo '<p>' . $candidates . '</p>'; ?>
+
 <?php foreach ($db->query('SELECT id, firstname, lastname, votes, party FROM candidate ORDER BY "votes" DESC') as $candidate) {
 	if($_POST['report-options'] == 'name') {
 		echo '';
