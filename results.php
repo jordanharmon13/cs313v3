@@ -1,8 +1,9 @@
 <?php require('database/database.php') ?>
 <?php require 'dynamic/header.php'; ?>
 
-<?php $db->query('SELECT id, firstname, lastname, votes, party FROM candidate'); 
-print_r($db); ?>
+<?php $candidate_info = ();
+candidate_info += $db->query('SELECT id, firstname, lastname, votes, party FROM candidate'); 
+print_r($candidate_info['id']); ?>
 
 <h1>Results</h1>
 <h3>Run Reports</h3>
