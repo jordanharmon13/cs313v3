@@ -1,4 +1,5 @@
 <?php
+start_session();
 require '../database/database.php';
 if (isset($_POST['sign-in'])) {
 	$query = 'SELECT firstname, lastname, username, password WHERE username = "' . $_POST['sign-in-username'] . '"';
