@@ -9,7 +9,6 @@ if (isset($_POST['sign-in'])) {
 	$pass2 = crypt($_POST['sign-in-password'], CRYPT_BLOWFISH);
 	print_r('$user[0]["password"]');
 		if ($user[0]['password'] == $pass2) {
-			header('Location: homepage.php');
 		} else {
 			$error = 'Please provide valid login';`			
 		}
