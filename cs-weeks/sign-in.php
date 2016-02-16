@@ -1,6 +1,6 @@
 <?php
 start_session();
-require '../database/database.php';
+require '../cs313/database/database.php';
 if (isset($_POST['sign-in'])) {
 	$query = 'SELECT firstname, lastname, username, password WHERE username = "' . $_POST['sign-in-username'] . '"';
 	$user = $db->query($query);
@@ -25,7 +25,7 @@ require '../dynamic/header.php';
 <?php echo $error; ?>
 
   <h2>Sign In</h2>
-	<form id="sign-in-form" action="#" method="post">
+	<form id="sign-in-form" action="sign-in.php" method="post">
 		<div class="form-group">
 			<label for="sign-in-username">Username</label>
 			<input type="email" class="form-control" id="sign-in-username" placeholder="Email">
