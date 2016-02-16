@@ -3,15 +3,15 @@ session_start();
 require '../database/database.php';
 
 if (isset($_POST['sign-in'])) {
-	$query = "SELECT username, password FROM user WHERE username = \"" . $_POST['sign-in-username'] . "\"";
-	$user = $db->query($query);
-	$user->fetchALL(PDO::FETCH_ASSOC);
+	$query = 'SELECT * FROM user WHERE username = "' . $_POST['sign-in-username'] . '"';
+	$user = $db->prepare($query);
+	$user->execute();
+	$user->setFetchMode(PDO::FETCH_ASSOC);
+	$usr = $user->fetchAll();
 	$pass2 = crypt($_POST['sign-in-password'], CRYPT_BLOWFISH);
-	$test = '1$xjciY3ksPEo';
-		if ($user[0]['password'] == $pass2) {
+		if ($usr[0]['password'] == $pass2) {
 			$_SESSION['logged-in'] = 'logged-in';
 			$_SESSION['username'] = $user[0]['username'];
-			print_r($pass2);
 			header('Location: homepage.php');
 		} else {
 			$error = 'Please provide valid login';
