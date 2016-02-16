@@ -1,5 +1,5 @@
 <?php
-session_start();
+//session_start();
 require '../database/database.php';
 
 if (isset($_POST['sign-in'])) {
@@ -9,11 +9,11 @@ if (isset($_POST['sign-in'])) {
 	$pass2 = crypt($_POST['sign-in-password'], CRYPT_BLOWFISH);
 		if ($user[0]['password'] == $pass2) {
 			/*$_SESSION['logged-in'] = 'logged-in';
-			$_SESSION['firstname'] = $user[0]['firstname'];
+			$_SESSION['firstname'] = $user[0]['firstname'];*/
 			header('Location: homepage.php');
 		} else {
 			$error = 'Please provide valid login';`
-		}*/
+		}
 	}
 require '../dynamic/header.php';
 
