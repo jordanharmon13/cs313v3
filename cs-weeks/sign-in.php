@@ -11,7 +11,7 @@ if (isset($_POST['sign-in'])) {
 	$test = '1$xjciY3ksPEo';
 		if ($test == $pass2) {
 			$_SESSION['logged-in'] = 'logged-in';
-			$_SESSION['username'] = $user[0]['username'];
+			//$_SESSION['username'] = $user[0]['username'];
 			header('Location: homepage.php');
 		} else {
 			$error = 'Please provide valid login';
