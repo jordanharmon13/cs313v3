@@ -1,5 +1,5 @@
 <?php
-start_session();
+session_start();
 if (!isset($_SESSION['logged-in'])) {
 	header('Location: sign-in.php')
 }

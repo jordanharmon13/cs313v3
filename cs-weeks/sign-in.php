@@ -1,6 +1,5 @@
 <?php
 session_start();
-require '../database/database.php';
 if (isset($_POST['sign-in'])) {
 	$query = 'SELECT firstname, lastname, username, password FROM user WHERE username = "' . $_POST['sign-in-username'] . '"';
 	$user = $db->query($query);
