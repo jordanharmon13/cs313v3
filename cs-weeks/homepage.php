@@ -11,7 +11,7 @@ require '../dynamic/header.php';
 <div>
 
   <h2>Welcome</h2>
-  <p>Welcome <?//php $_SESSION['firstname']; ?>, you are now a member.</p>
+  <p>Welcome <?php echo $_SESSION['username']; ?>, you are now a member.</p>
   
 
 <?php require '../dynamic/footer.php'; ?>
