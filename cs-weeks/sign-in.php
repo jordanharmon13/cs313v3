@@ -10,7 +10,7 @@ if (isset($_POST['sign-in'])) {
 		if ($user[0]['password'] == $pass2) {
 			$_SESSION['logged-in'] = 'logged-in';
 			$_SESSION['firstname'] = $user[0]['firstname'];
-			header('Location: homepage.php')
+			header('Location: homepage.php');
 		} else {
 			$error = 'Please provide valid login';`
 		}
