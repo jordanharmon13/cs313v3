@@ -6,10 +6,10 @@ if (isset($_POST['sign-in'])) {
 	$user = $db->query($query);
 	$user = fetchAll(PDO::FETCH_ASSOC);
 	$pass2 = crypt($_POST['sign-in-password'], CRYPT_BLOWFISH);
-		if ($user['password'] == $pass2) {
+		if ($user[0]['password'] == $pass2) {
 			start_session();
 			$_SESSION['logged-in'] = 'logged-in';
-			$_SESSION['firstname'] = $user['firstname'];
+			$_SESSION['firstname'] = $user[0]['firstname'];
 			header('Location: homepage.php')
 		} else {
 			$error = 'Please provide valid login';
