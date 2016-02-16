@@ -1,8 +1,24 @@
 <?php
+require '../database/database.php';
 require '../dynamic/header.php';
 
 ?>
 <h1 id="main-h1">Assignments</h1>
+<?php if (isset($_POST['sign-in'])) {
+	$query = 'SELECT firstname, lastname, username, password WHERE username = "' . $_POST['sign-in-username'] . '"';
+	$user = $db->query($query);
+	$user->fetchAll(PDO::FETCH_ASSOC);
+	$pass2 = crypt($_POST['sign-in-password'], CRYPT_BLOWFISH);
+		if ($user['password'] == $pass2) {
+			start_session();
+			$_SESSION['logged-in'] = 'logged-in';
+			$_SESSION['username'] = $user['firstname'];
+			header('Location: ../index.php')
+		} else {
+			echo '<p>Please enter valid login</p>'
+		}
+	}
+} ?>
 
 <div>
 
@@ -17,7 +33,7 @@ require '../dynamic/header.php';
 			<input type="password" class="form-control" id="sign-in-password" placeholder="Password">
 		</div>
 		<div class="form-group">
-			<input type="button" class="btn btn-default" form="sign-in-form" value="Sign In">
+			<input type="submit" class="btn btn-default" form="sign-in-form" value="Sign In" name="sign-in">
 		</div>
 	</form>
 

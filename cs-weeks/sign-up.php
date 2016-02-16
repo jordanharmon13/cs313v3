@@ -7,7 +7,7 @@ require '../dynamic/header.php';
 <?php 
 if (isset($_POST['sign-up'])) {
 	if ($_POST['sign-up-first'] != "" && $_POST['sign-up-first'] != NULL) {
-		$query = 'INSERT INTO user (firstname, lastname, username, email, password) VALUES ("' . $_POST['sign-up-first'] . '", "' . $_POST['sign-up-last'] . '", "' . $_POST['sign-up-user'] . '", "' . $_POST['sign-up-email'] . '", "' . $_POST['sign-up-password'] . '")';
+		$query = 'INSERT INTO user (firstname, lastname, username, email, password) VALUES ("' . $_POST['sign-up-first'] . '", "' . $_POST['sign-up-last'] . '", "' . $_POST['sign-up-user'] . '", "' . $_POST['sign-up-email'] . '", "' . crypt($_POST['sign-up-password'], CRYPT_BLOWFISH) . '")';
 		$db->exec($query);
 	} else {
 		echo '<p>Please fill in every part of the form</p>';
