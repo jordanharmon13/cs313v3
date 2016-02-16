@@ -1,8 +1,8 @@
 <?php
 session_start();
-/*if (!isset($_SESSION['logged-in'])) {
+if (!isset($_SESSION['id'])) {
 	header('Location: sign-in.php')
-}*/
+}
 require '../dynamic/header.php';
 
 ?>
