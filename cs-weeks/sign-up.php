@@ -1,7 +1,6 @@
 <?php
 require '../database/database.php';
 require '../dynamic/header.php';
-require 'password.php';
 
 ?>
 <h1 id="main-h1">Assignments</h1>
