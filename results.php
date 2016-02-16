@@ -3,10 +3,8 @@ require('database/database.php');
 require 'dynamic/header.php';
 
 foreach ($db->query('SELECT id, firstname, lastname, votes, party FROM candidate ORDER BY "votes" DESC') as $candidate) {
-	$candidates = ();
-	$candiates += $candidate;
-	print_r($candidates);
-}
+	$total_votes = 0;
+	$total_votes += $candidate['votes'];
 	$vote_per = $candidate['votes']/$total_votes * 100;
 	if($_POST['report-options'] == 'name') {
 		echo '<ul><li>' . $candidate['firstname'] . ' ' . $candidate['lastname'] . '</li></ul>';
@@ -19,7 +17,8 @@ foreach ($db->query('SELECT id, firstname, lastname, votes, party FROM candidate
 	} else if ($_POST['report-options'] == 'poll-results') {
 		$vote_per = $candidate['votes']/$total_votes * 100;
 		echo '<div>' . $candidate['firstname'] . ' ' . $candidate['lastname'] . $vote_per . '% <progress max="100" value="' . $vote_per . '"></progress></div>';
-	} ?>
+	}
+} ?>
 <!--
 <table border="1">
 	<tr>
