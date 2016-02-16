@@ -6,8 +6,8 @@ require '../dynamic/header.php';
 <h1 id="main-h1">Assignments</h1>
 <?php 
 if (isset($_POST['Sign Up'])) {
-	if ($_POST['sign-up-first'] != "" && $_POST['sign-up-first'] != NULL && $_POST['sign-up-last'] != "" && $_POST['sign-up-last'] != NULL && $_POST['sign-up-user'] != "" && $_POST['sign-up-user'] != NULL && $_POST['sign-up-password'] != "" && $_POST['sign-up-password'] != NULL) {
-		$query = 'INSERT INTO user (firstname, lastname, username, password) VALUES (' . $_POST['sign-up-first'] . ', ' . $_POST['sign-up-last'] . ', ' . $_POST['sign-up-user'] . ', ' . $_POST['sign-up-password'] . ')';
+	if ($_POST['sign-up-first'] != "" && $_POST['sign-up-first'] != NULL && $_POST['sign-up-last'] != "" && $_POST['sign-up-last'] != NULL && $_POST['sign-up-user'] != "" && $_POST['sign-up-user'] != NULL && $_POST['sign-up-password'] != "" && $_POST['sign-up-password'] != NULL && $_POST['sign-up-email'] != "" && $_POST['sign-up-email'] != NULL) {
+		$query = 'INSERT INTO user (firstname, lastname, username, email, password) VALUES (' . $_POST['sign-up-first'] . ', ' . $_POST['sign-up-last'] . ', ' . $_POST['sign-up-user'] . ', ' . $_POST['sign-up-email'] . ', ' . $_POST['sign-up-password'] . ')';
 		$db->exec($query);
 	} else {
 		echo '<p>Please fill in every part of the form</p>';
@@ -29,7 +29,11 @@ if (isset($_POST['Sign Up'])) {
 		  </div>
 		  <div class="form-group">
 			<label for="sign-up-user">Username</label>
-			<input type="email" class="form-control" name="sign-up-user" placeholder="Username">
+			<input type="text" class="form-control" name="sign-up-user" placeholder="Username">
+		  </div>
+		  <div class="form-group">
+			<label for="sign-up-email">Email</label>
+			<input type="email" class="form-control" name="sign-up-email" placeholder="Email">
 		  </div>
 		  <div class="form-group">
 			<label for="sign-up-password">Password</label>
