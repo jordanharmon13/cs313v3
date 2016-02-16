@@ -5,7 +5,7 @@ require '../database/database.php';
 if (isset($_POST['sign-in'])) {
 	$query = "SELECT username, password FROM user WHERE username = \"" . $_POST['sign-in-username'] . "\"";
 	$user = $db->query($query);
-	$user->fetch();
+	$user->fetchALL(PDO::FETCH_ASSOC);
 	$pass2 = crypt($_POST['sign-in-password'], CRYPT_BLOWFISH);
 	$test = '1$xjciY3ksPEo';
 		if ($user[0]['password'] == $pass2) {
