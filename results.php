@@ -6,8 +6,8 @@ foreach ($db->query('SELECT id, firstname, lastname, votes, party FROM candidate
 	$total_votes = 0;
 	$vote_per;
 	foreach () {
-		global $total_votes += $candidate['votes'];
-		global $vote_per = $candidate['votes']/$total_votes * 100;
+		$total_votes += $candidate['votes'];
+		$vote_per = $candidate['votes']/$total_votes * 100;
 	}
 
 	if($_POST['report-options'] == 'name') {
