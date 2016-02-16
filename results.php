@@ -4,7 +4,7 @@ require 'dynamic/header.php';
 $total_votes = 0;
 
 foreach ($db->query('SELECT id, firstname, lastname, votes, party FROM candidate ORDER BY "votes" DESC') as $candidate) {
-	foreach ($candidate['votes'] as $vote) {
+	foreach ($db->query('SELECT votes FROM candidate') as $vote) {
 		global $total_votes;
 		$total_votes += $vote;
 	}
