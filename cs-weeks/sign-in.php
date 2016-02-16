@@ -26,7 +26,7 @@ require '../dynamic/header.php';
 	<form id="sign-in-form" action="sign-in.php" method="post">
 		<div class="form-group">
 			<label for="sign-in-username">Username</label>
-			<input type="email" class="form-control" name="sign-in-username" placeholder="Email">
+			<input type="text" class="form-control" name="sign-in-username" placeholder="Email">
 		</div>
 		<div class="form-group">
 			<label for="sign-in-password">Password</label>
