@@ -30,6 +30,10 @@
 		<ul>
 			<li id="about-me"><a href="../index.php">About Me</a></li>
 			<li id="polls"><a href="../polls.php">Polls</a></li>
-			<li id="assignments"><a href="../assignments.php">Assignments</a></li>		
+			<li id="assignments"><a href="../assignments.php">Assignments</a></li>	
+			<li id="log-in"><a href="../cs-weeks/sign-in.php">Sign In</a></li>	
+			<li id="sign-up"><a href="../cs-weeks/sign-up.php">Sign Up</a></li>		
+			
+
 		</ul>
 	</nav>
