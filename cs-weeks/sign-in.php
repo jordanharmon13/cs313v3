@@ -3,8 +3,9 @@ session_start();
 require '../database/database.php';
 
 if (isset($_POST['sign-in'])) {
-	$query = 'SELECT firstname, lastname, username, password FROM user WHERE username = "' . $_POST['sign-in-username'] . '"';
-	$user = $db->query($query);
+	$user = $db->query("SELECT firstname, lastname, username, password FROM user WHERE username = \"" . $_POST['sign-in-username'] . "\"");
+	//$query = 'SELECT firstname, lastname, username, password FROM user WHERE username = \"' . $_POST['sign-in-username'] . '\"';
+	//$user = $db->query($query);
 	$user = fetchAll(PDO::FETCH_ASSOC);
 	$pass2 = crypt($_POST['sign-in-password'], CRYPT_BLOWFISH);
 	print_r('$user[0]["password"]');
