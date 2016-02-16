@@ -1,4 +1,5 @@
 <?php
+start_session();
 require '../dynamic/header.php';
 
 ?>
@@ -6,15 +7,8 @@ require '../dynamic/header.php';
 
 <div>
 
-  <h2>Week 2 Form Project</h2>
+  <h2>Welcome</h2>
+  <p>Welcome <?php $_SESSION['firstname']; ?></p>
   
-  <div>
-    <ul>
-      <li><a href="scriptures.php">Team Assignment</a></li>
-      <li><a href="week-5-personal.php">Personal Assignment</a></li>
-	  <li><a href="week-5-personal.php">Sign Up</a></li>
-
-    </ul>  
-  </div>
 
 <?php require '../dynamic/footer.php'; ?>

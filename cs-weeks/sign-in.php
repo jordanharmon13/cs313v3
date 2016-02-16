@@ -1,10 +1,6 @@
 <?php
 require '../database/database.php';
-require '../dynamic/header.php';
-
-?>
-<h1 id="main-h1">Assignments</h1>
-<?php if (isset($_POST['sign-in'])) {
+if (isset($_POST['sign-in'])) {
 	$query = 'SELECT firstname, lastname, username, password WHERE username = "' . $_POST['sign-in-username'] . '"';
 	$user = $db->query($query);
 	$user->fetchAll(PDO::FETCH_ASSOC);
@@ -12,15 +8,21 @@ require '../dynamic/header.php';
 		if ($user['password'] == $pass2) {
 			start_session();
 			$_SESSION['logged-in'] = 'logged-in';
-			$_SESSION['username'] = $user['firstname'];
-			header('Location: ../index.php')
+			$_SESSION['firstname'] = $user['firstname'];
+			header('Location: homepage.php')
 		} else {
-			echo '<p>Please enter valid login</p>'
+			$error = 'Please provide valid login';
 		}
 	}
-} ?>
+}
+require '../dynamic/header.php';
+
+?>
+<h1 id="main-h1">Assignments</h1>
 
 <div>
+
+<?php echo $error; ?>
 
   <h2>Sign In</h2>
 	<form id="sign-in-form" action="#" method="post">

@@ -1,22 +1,26 @@
 <?php
 require '../database/database.php';
-require '../dynamic/header.php';
 
-?>
-<h1 id="main-h1">Assignments</h1>
-<?php 
+
 if (isset($_POST['sign-up'])) {
 	if ($_POST['sign-up-first'] != "" && $_POST['sign-up-first'] != NULL) {
 		$query = 'INSERT INTO user (firstname, lastname, username, email, password) VALUES ("' . $_POST['sign-up-first'] . '", "' . $_POST['sign-up-last'] . '", "' . $_POST['sign-up-user'] . '", "' . $_POST['sign-up-email'] . '", "' . crypt($_POST['sign-up-password'], CRYPT_BLOWFISH) . '")';
 		$db->exec($query);
+		header('Location: sign.php')
 	} else {
-		echo '<p>Please fill in every part of the form</p>';
+		$error = '<p>Please fill in every part of the form</p>';
 	}
 } 
+
+require '../dynamic/header.php';
+
 ?>
+<h1 id="main-h1">Assignments</h1>
 <div>
 
   <h2>Sign Up</h2>
+  
+  <?php echo $error; ?>
   
 	<form id="sign-up-form" method="post" action="sign-up.php">
 		  <div class="form-group">
