@@ -1,6 +1,6 @@
 <?php
 start_session();
-require '../cs313/database/database.php';
+include '../cs313/database/database.php';
 if (isset($_POST['sign-in'])) {
 	$query = 'SELECT firstname, lastname, username, password WHERE username = "' . $_POST['sign-in-username'] . '"';
 	$user = $db->query($query);
