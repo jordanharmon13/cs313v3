@@ -1,4 +1,4 @@
-<?php ?>
+<?php require '../cs-weeks/password.php'; ?>
 <!doctype html>
 
 <html lang="en">
