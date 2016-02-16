@@ -49,11 +49,4 @@ require 'dynamic/header.php'; ?>
 	} ?>
 </div>
 
-<div>
-
-<?php foreach ($db->query('SELECT id, firstname, lastname, votes, party FROM candidate ORDER BY "votes" DESC') as $candidate) {
-	echo '<ul><li>' . $candidate['firstname'] . ' ' . $candidate['lastname'] . '</li></ul>';
-}
- ?>
-</div>
 <?php require 'dynamic/footer.php'; ?>
