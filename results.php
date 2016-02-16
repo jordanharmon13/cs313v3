@@ -1,15 +1,28 @@
 <?php 
 require('database/database.php');
 require 'dynamic/header.php';
-$total_votes = 0;
+// run query
+$results = $db->query("SELECT * FROM candidate");
 
-foreach ($db->query('SELECT id, firstname, lastname, votes, party FROM candidate ORDER BY "votes" DESC') as $candidate) {
-	foreach ($db->query('SELECT votes FROM candidate') as $vote) {
-		global $total_votes;
-		$total_votes += $vote;
-	}
-	print_r($total_votes);
-	$vote_per = $candidate['votes']/$total_votes * 100;
+// set array
+$array = array();
+
+// look through query
+while($row = mysql_fetch_assoc($results)){
+
+  // add each row returned into an array
+  $array[] = $row;
+
+  // OR just echo the data:
+  echo $row['username']; // etc
+
+}
+
+// debug:
+print_r($array); // show all array data
+echo $array[0]['username']; // print the first rows username
+
+
 	if($_POST['report-options'] == 'name') {
 		echo '<ul><li>' . $candidate['firstname'] . ' ' . $candidate['lastname'] . '</li></ul>';
 	} else if ($_POST['report-options'] == 'votes') {
@@ -22,7 +35,6 @@ foreach ($db->query('SELECT id, firstname, lastname, votes, party FROM candidate
 		$vote_per = $candidate['votes']/$total_votes * 100;
 		echo '<div>' . $candidate['firstname'] . ' ' . $candidate['lastname'] . $vote_per . '% <progress max="100" value="' . $vote_per . '"></progress></div>';
 	}
-}
 
 results(); ?>
 <!--
