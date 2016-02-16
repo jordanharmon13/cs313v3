@@ -6,7 +6,7 @@ if (isset($_POST['sign-up'])) {
 	if ($_POST['sign-up-first'] != "" && $_POST['sign-up-first'] != NULL) {
 		$query = 'INSERT INTO user (firstname, lastname, username, email, password) VALUES ("' . $_POST['sign-up-first'] . '", "' . $_POST['sign-up-last'] . '", "' . $_POST['sign-up-user'] . '", "' . $_POST['sign-up-email'] . '", "' . crypt($_POST['sign-up-password'], CRYPT_BLOWFISH) . '")';
 		$db->exec($query);
-		header('Location: sign-in.php')
+		header('Location: sign-in.php');
 	} else {
 		$error = '<p>Please fill in every part of the form</p>';
 	}
