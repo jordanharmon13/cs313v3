@@ -26,11 +26,11 @@ require '../dynamic/header.php';
 	<form id="sign-in-form" action="sign-in.php" method="post">
 		<div class="form-group">
 			<label for="sign-in-username">Username</label>
-			<input type="text" class="form-control" name="sign-in-username" placeholder="Email">
+			<input type="text" class="form-control" name="sign-in-username" placeholder="Email" required="required">
 		</div>
 		<div class="form-group">
 			<label for="sign-in-password">Password</label>
-			<input type="password" class="form-control" name="sign-in-password" placeholder="Password">
+			<input type="password" class="form-control" name="sign-in-password" placeholder="Password" required="required">
 		</div>
 		<div class="form-group">
 			<input type="submit" class="btn btn-default" form="sign-in-form" value="Sign In" name="sign-in">
