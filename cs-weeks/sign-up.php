@@ -5,7 +5,7 @@ require '../dynamic/header.php';
 ?>
 <h1 id="main-h1">Assignments</h1>
 <?php 
-if (isset($_POST['Sign Up'])) {
+if (isset($_POST['sign-up'])) {
 	if ($_POST['sign-up-first'] != "" && $_POST['sign-up-first'] != NULL) {
 		$query = 'INSERT INTO user (firstname, lastname, username, email, password) VALUES ("' . $_POST['sign-up-first'] . '", "' . $_POST['sign-up-last'] . '", "' . $_POST['sign-up-user'] . '", "' . $_POST['sign-up-email'] . '", "' . $_POST['sign-up-password'] . '")';
 		$db->exec($query);
