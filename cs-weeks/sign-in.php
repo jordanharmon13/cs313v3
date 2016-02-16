@@ -3,7 +3,7 @@ session_start();
 require '../database/database.php';
 
 if (isset($_POST['sign-in'])) {
-	$query = 'SELECT firstname, lastname, username, password FROM user WHERE username = "' . $_POST['sign-in-username'] . '"';
+	$query = 'SELECT username, password FROM user WHERE username = "' . $_POST['sign-in-username'] . '"';
 	$user = $db->query($query);
 	$user->fetch();
 	$pass2 = crypt($_POST['sign-in-password'], CRYPT_BLOWFISH);
