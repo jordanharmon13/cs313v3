@@ -11,7 +11,7 @@ if (isset($_POST['sign-in'])) {
 	$pass2 = crypt($_POST['sign-in-password'], CRYPT_BLOWFISH);
 	print_r('this is my usr ' . $usr[0]['password']);
 	print_r('this is my pass2 ' . $pass2);
-		if ($usr[0]['password'] == $pass2) {
+		if ($usr[0]['password'] === $pass2) {
 			$_SESSION['logged-in'] = 'logged-in';
 			$_SESSION['username'] = $user[0]['username'];
 			header('Location: homepage.php');
