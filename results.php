@@ -32,8 +32,8 @@ require 'dynamic/header.php'; ?>
 			</div>
 		</form>
 	<?php foreach ($db->query('SELECT id, firstname, lastname, votes, party FROM candidate') as $candidate) {
-		$db .= 'SELECT SUM(votes) FROM candidate';
-		$vote_per = $candidate['votes']/$db * 100;
+		$total_votes += $candidate['votes'];
+		$vote_per = $candidate['votes']/$total_votes * 100;
 		if($_POST['report-options'] == 'name') {
 			echo '<ul><li>' . $candidate['firstname'] . ' ' . $candidate['lastname'] . '</li></ul>';
 		} else if ($_POST['report-options'] == 'votes') {
