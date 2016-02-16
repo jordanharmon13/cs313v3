@@ -36,7 +36,7 @@ if (isset($_POST['Sign Up'])) {
 			<input type="password" class="form-control" name="sign-up-password" placeholder="Password">
 		  </div>
 		  <div class="form-group">
-			<input type="button" class="btn btn-default" form="sign-up-form" value="Sign Up" name="sign-up">
+			<input type="submit" class="btn btn-default" form="sign-up-form" value="Sign Up" name="sign-up">
 		  </div>
 	</form>
 	
