@@ -9,7 +9,7 @@ require '../dynamic/header.php';
   <h2>Sign In</h2>
 	<form id="sign-in-form" action="#" method="post">
 		<div class="form-group">
-			<label for="sign-in-username">Email address</label>
+			<label for="sign-in-username">Username</label>
 			<input type="email" class="form-control" id="sign-in-username" placeholder="Email">
 		</div>
 		<div class="form-group">
