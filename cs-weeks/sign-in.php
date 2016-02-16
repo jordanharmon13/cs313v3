@@ -8,7 +8,8 @@ if (isset($_POST['sign-in'])) {
 	$user->fetchAll(PDO::FETCH_ASSOC);
 	$pass2 = crypt($_POST['sign-in-password'], CRYPT_BLOWFISH);
 	print_r($pass2);
-		if ('1$xjciY3ksPEo' == $pass2) {
+	$test = '1$xjciY3ksPEo';
+		if ($test == $pass2) {
 			$_SESSION['logged-in'] = 'logged-in';
 			$_SESSION['username'] = $user[0]['username'];
 			header('Location: homepage.php');
