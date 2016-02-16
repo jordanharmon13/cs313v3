@@ -6,16 +6,23 @@ require 'dynamic/header.php'; ?>
 	<table border="1">
 		<tr>
 			<th>Name</th>
+			<th>Votes</th>
+		</tr>
+		<tr>
 			<td>Donald Trump</td>
 			<td>Ted Cruz</td>
 		</tr>
 		<tr>
-			<th>Votes</th>
 			<td>10</td>
 			<td>20</td>
 		</tr>
 	</table>
 	-->
+	<?php $result = $db->query('SELECT SUM(votes) AS total_votes');
+		$row = mysql_fetch_array($result);
+		$sum = $row['total_votes'];
+		print_r($sum);
+	?>
 	<h1>Results</h1>
 	<h3>Run Reports</h3>
 		<form name="reports" method="post" action="results.php">
