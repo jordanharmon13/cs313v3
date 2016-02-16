@@ -1,19 +1,8 @@
 <?php
-
+session_start();
 require '../database/database.php';
 
 if (isset($_POST['sign-in'])) {
-	$query = 'SELECT firstname, lastname, username, password FROM user WHERE username = \"' . $_POST['sign-in-username'] . '\"';
-	$user = $db->query($query);
-	$user = fetchAll(PDO::FETCH_ASSOC);
-	$pass2 = crypt($_POST['sign-in-password'], CRYPT_BLOWFISH);
-	print_r('$user[0]["password"]');
-		if ($user[0]['password'] == $pass2) {
-		} else {
-			$error = 'Please provide valid login';`			
-		}
-}
-/*if (isset($_POST['sign-in'])) {
 	$query = 'SELECT firstname, lastname, username, password FROM user WHERE username = "' . $_POST['sign-in-username'] . '"';
 	$user = $db->query($query);
 	$user = fetchAll(PDO::FETCH_ASSOC);
@@ -23,9 +12,9 @@ if (isset($_POST['sign-in'])) {
 			$_SESSION['firstname'] = $user[0]['firstname'];
 			header('Location: homepage.php');
 		} else {
-			$error = 'Please provide valid login';`
+			$error = 'Please provide valid login';
 		}
-	}*/
+	}
 require '../dynamic/header.php';
 
 ?>
