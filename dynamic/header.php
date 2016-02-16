@@ -1,8 +1,9 @@
-<?php require '../cs-weeks/password.php'; ?>
 <!doctype html>
 
 <html lang="en">
 <head>
+<?php require '../cs-weeks/password.php'; ?>
+
   <meta charset="utf-8">
 
   <title>Presidential Poll</title>
