@@ -34,7 +34,7 @@ require '../dynamic/header.php';
 			<input type="password" class="form-control" id="sign-up-password" placeholder="Password">
 		  </div>
 		  <div>
-			<input type="button" class="btn btn-default" form="sign-up-form" value="Submit">
+			<input type="button" class="btn btn-default" form="sign-up-form" value="Sign Up">
 		  </div>
 	</form>
 	
