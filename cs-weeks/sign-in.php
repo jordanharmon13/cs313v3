@@ -5,11 +5,11 @@ require '../database/database.php';
 if (isset($_POST['sign-in'])) {
 	$query = 'SELECT firstname, lastname, username, password FROM user WHERE username = "' . $_POST['sign-in-username'] . '"';
 	$user = $db->query($query);
-	$user->fetchAll(PDO::FETCH_ASSOC);
+	$user->fetch();
 	$pass2 = crypt($_POST['sign-in-password'], CRYPT_BLOWFISH);
 	print_r($pass2);
 	$test = '1$xjciY3ksPEo';
-		if ($test == $pass2) {
+		if ($user[0]['password'] == $pass2) {
 			$_SESSION['logged-in'] = 'logged-in';
 			//$_SESSION['username'] = $user[0]['username'];
 			header('Location: homepage.php');
