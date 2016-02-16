@@ -1,5 +1,4 @@
 <?php
-start_session();
 require '../database/database.php';
 
 require '../dynamic/header.php';
