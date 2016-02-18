@@ -14,6 +14,7 @@ if (isset($_POST['sign-in'])) {
 	print_r('this is my usr ' . $usr[0]['password']);
 	print_r('this is my pass2 ' . $pass2);
 		if ($usr[0]['password'] == $pass2) {
+			$_SESSION['id'] = $usr[0]['id'];
 			$_SESSION['username'] = $username;
 			header('Location: homepage.php');
 			die();
@@ -42,5 +43,6 @@ require '../dynamic/header.php';
 			<input type="submit" class="btn btn-default" form="sign-in-form" value="Sign In" name="sign-in">
 		</div>
 	</form>
+	<p>Don't have an account? Click <a href="sign-up.php">HERE</a> to register.</p>
 
 <?php require '../dynamic/footer.php'; ?>

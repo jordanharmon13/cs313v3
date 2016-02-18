@@ -1,5 +1,12 @@
-<?php require('database/database.php') ?>
-<?php require 'dynamic/header.php'; ?>
+<?php session_start(); 
+if (isset($_SESSION['id'])) {
+	$id = $_SESSION['id'];
+} else {
+	header('Location: csweeks/sign-in.php');
+	die();
+}
+	require('database/database.php');
+	require 'dynamic/header.php'; ?>
 
 <h1>Polls Application</h1>
 <div><p>This is where the polls application will be located. For the moment, we will have this application below to illustrate what I will be creating, but I will be connecting it to my own database.</p></div>

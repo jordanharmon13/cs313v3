@@ -21,7 +21,7 @@ $db = new PDO("mysql:host=$dbHost:$dbPort;dbname=$dbName", $dbUser, $dbPassword)
 $method = $_SERVER['REQUEST_METHOD'];
 if ($method == "POST") {
 	if ($_POST['third-party-first-name'] != "" && $_POST['third-party-first-name'] != NULL) {
-		$query = "INSERT INTO `candidate` (`firstname`, `lastname`, `votes`, `party`) VALUES (\"" . $_POST['third-party-first-name'] . "\", \"" . $_POST['third-party-last-name'] . "\", 1, \"" . $_POST['third-party-party'] . "\");";
+		$query = "INSERT INTO `candidate` (`firstname`, `lastname`, `votes`, `party`, `sub_by`) VALUES (\"" . $_POST['third-party-first-name'] . "\", \"" . $_POST['third-party-last-name'] . "\", 1, \"" . $_POST['third-party-party'] . "\", \"" . $_SESSION['id'] . "\");";
 		$db->query($query);
 		print_r($db->errorInfo);
 	} else {
