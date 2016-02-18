@@ -49,6 +49,7 @@ require 'dynamic/header.php'; ?>
 		foreach ($votes as $each){
 		   $total += $each['votes'];
 		}
+		var_dump($total);
 
 ?>
 	<?php foreach ($db->query('SELECT id, firstname, lastname, votes, party FROM candidate') as $candidate) {
