@@ -2,7 +2,7 @@
 if (isset($_SESSION['id'])) {
 	$id = $_SESSION['id'];
 } else {
-	header('Location: csweeks/sign-in.php');
+	header('Location: cs-weeks/sign-in.php');
 	die();
 }
 	require('database/database.php');
