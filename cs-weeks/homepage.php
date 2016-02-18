@@ -1,8 +1,11 @@
 <?php
 session_start();
-/*if (!isset($_SESSION['id'])) {
+if (!isset($_SESSION['username'])) {
 	header('Location: sign-in.php')
-}*/
+	die();
+} else {
+	$username = $_SESSION['username'];
+}
 require '../dynamic/header.php';
 
 ?>
@@ -11,7 +14,7 @@ require '../dynamic/header.php';
 <div>
 
   <h2>Welcome</h2>
-  <p>Welcome <?php echo $_SESSION['username']; ?>, you are now a member.</p>
+  <p>Welcome <?php echo $username; ?>, you are now a member.</p>
   
 
 <?php require '../dynamic/footer.php'; ?>

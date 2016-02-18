@@ -1,5 +1,4 @@
 <?php
-session_start();
 require '../database/database.php';
 
 
@@ -8,6 +7,7 @@ if (isset($_POST['sign-up'])) {
 		$query = 'INSERT INTO user (firstname, lastname, username, email, password) VALUES ("' . $_POST['sign-up-first'] . '", "' . $_POST['sign-up-last'] . '", "' . $_POST['sign-up-user'] . '", "' . $_POST['sign-up-email'] . '", "' . crypt($_POST['sign-up-password'], CRYPT_BLOWFISH) . '")';
 		$db->exec($query);
 		header('Location: sign-in.php');
+		die();
 	} else {
 		$error = '<p>Please fill in every part of the form</p>';
 	}

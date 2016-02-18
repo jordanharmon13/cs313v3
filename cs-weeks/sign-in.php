@@ -12,9 +12,9 @@ if (isset($_POST['sign-in'])) {
 	print_r('this is my usr ' . $usr[0]['password']);
 	print_r('this is my pass2 ' . $pass2);
 		if ($usr[0]['password'] == $pass2) {
-			$_SESSION['id'] = "id";
 			$_SESSION['username'] = $_POST['sign-in-username'];
 			header('Location: homepage.php');
+			die();
 		} else {
 			$error = 'Please provide valid login';
 		}
