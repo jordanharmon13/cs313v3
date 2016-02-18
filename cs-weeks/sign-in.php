@@ -2,6 +2,8 @@
 session_start();
 require '../database/database.php';
 
+$username = $_POST['sign-in-username'];
+
 if (isset($_POST['sign-in'])) {
 	$query = 'SELECT * FROM user WHERE username = "' . $_POST['sign-in-username'] . '"';
 	$user = $db->prepare($query);
@@ -12,7 +14,7 @@ if (isset($_POST['sign-in'])) {
 	print_r('this is my usr ' . $usr[0]['password']);
 	print_r('this is my pass2 ' . $pass2);
 		if ($usr[0]['password'] == $pass2) {
-			$_SESSION['username'] = $_POST['sign-in-username'];
+			$_SESSION['username'] = $username;
 			header('Location: homepage.php');
 			die();
 		} else {
