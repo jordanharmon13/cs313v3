@@ -33,6 +33,7 @@ if (isset($_SESSION['id'])) {
 					echo '<div class="radio"><label><input name="candidate" value="' . $candidate['id'] . '" type="radio" class="form-control" id="' . $candidate['id'] . '" />' . $candidate['firstname'] . ' ' . $candidate['lastname'] . '</label></div><br>';
 				}
 			} ?>
+			<input class="btn btn-default" type="submit" form="pres-poll" value="Vote" />
 			<strong>Enter Alternate Candidate</strong><br>
 			<form class="form-inline">
 				<div class="form-group">
