@@ -62,8 +62,7 @@ require 'dynamic/header.php'; ?>
 		} else if ($_POST['report-options'] == 'id') {
 			echo '<ul><li>' . $candidate['firstname'] . ' ' . $candidate['lastname'] . ' - Candidate ID is ' . $candidate['id'] . '</li></ul>';
 		} else if ($_POST['report-options'] == 'poll-results') {
-			$vote_per = $candidate['votes']/$total_votes * 100;
-			echo '<div>' . $candidate['firstname'] . ' ' . $candidate['lastname'] . $vote_per . '% <progress max="100" value="' . $vote_per . '"></progress></div>';
+			echo '<div>' . $candidate['firstname'] . ' ' . $candidate['lastname'] . ' ' . $vote_per . '% <progress max="100" value="' . $vote_per . '"></progress></div>';
 		}
 	} ?>
 </div>
