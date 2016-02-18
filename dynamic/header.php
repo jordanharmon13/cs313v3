@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -24,6 +25,21 @@
 
 <body>
 <div class="container">
+
+<?php if (isset($_SESSION['username'])) {
+	$username = $_SESSION['username'];?>
+	
+	<nav class="ddmenu">
+		<ul>
+			<li id="about-me"><a href="../index.php">About Me</a></li>
+			<li id="polls"><a href="../polls.php">Polls</a></li>
+			<li id="assignments"><a href="../assignments.php">Assignments</a></li>	
+			<li id="log-in"><a href="../cs-weeks/sign-out.php">Sign Out</a></li>				
+
+		</ul>
+	</nav>
+	<?php
+} else { ?>
 	<nav class="ddmenu">
 		<ul>
 			<li id="about-me"><a href="../index.php">About Me</a></li>
@@ -35,3 +51,4 @@
 
 		</ul>
 	</nav>
+<?php } ?>
