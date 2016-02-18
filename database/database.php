@@ -26,7 +26,7 @@ if ($method == "POST") {
 		print_r($db->errorInfo);
 	} else {
 		$db->query("UPDATE candidate SET votes = votes + 1 WHERE id = " . $_POST['candidate'] . ";");
-		header('Location: results.php');
+		header('Location: ../results.php');
 		die();
 	}
 }
