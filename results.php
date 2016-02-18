@@ -38,9 +38,21 @@ require 'dynamic/header.php'; ?>
 			  <input class="btn btn-default" name="reports" type="submit">
 			</div>
 		</form>
+		<?php
+
+		$totevote = $db->prepare('SELECT votes FROM candidates');
+		$totevote->execute();
+		$totevote->setFetchMode(PDO::FETCH_ASSOC);
+		$votes = $totevote->fetchAll();
+
+		$total = 0;
+		foreach ($votes as $each){
+		   $total += $each['votes'];
+		}
+
+?>
 	<?php foreach ($db->query('SELECT id, firstname, lastname, votes, party FROM candidate') as $candidate) {
-		$total_votes += $candidate['votes'];
-		$vote_per = $candidate['votes']/$total_votes * 100;
+		$vote_per = $candidate['votes']/$total * 100;
 		if($_POST['report-options'] == 'name') {
 			echo '<ul><li>' . $candidate['firstname'] . ' ' . $candidate['lastname'] . '</li></ul>';
 		} else if ($_POST['report-options'] == 'votes') {
