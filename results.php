@@ -18,11 +18,6 @@ require 'dynamic/header.php'; ?>
 		</tr>
 	</table>
 	-->
-	<?php $result = $db->query('SELECT SUM(votes) AS total_votes');
-		$row = mysql_fetch_array($result);
-		$sum = $row['total_votes'];
-		print_r($sum);
-	?>
 	<h1>Results</h1>
 	<h3>Run Reports</h3>
 		<form name="reports" method="post" action="results.php">
