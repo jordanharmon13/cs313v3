@@ -1,5 +1,7 @@
 <?php
 session_start();
+
+var_dump($_SESSION['username']);
 if (isset($_SESSION['username'])) {
 	$username = $_SESSION['username'];
 } else {
@@ -9,7 +11,7 @@ if (isset($_SESSION['username'])) {
 require '../dynamic/header.php';
 
 ?>
-<h1 id="main-h1">Assignments</h1>
+<h1 id="main-h1">Home</h1>
 
 <div>
 
