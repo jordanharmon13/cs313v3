@@ -40,7 +40,7 @@ require 'dynamic/header.php'; ?>
 		</form>
 		<?php
 
-		$totevote = $db->prepare('SELECT votes FROM candidates');
+		$totevote = $db->prepare('SELECT votes FROM candidate');
 		$totevote->execute();
 		$totevote->setFetchMode(PDO::FETCH_ASSOC);
 		$votes = $totevote->fetchAll();
@@ -50,6 +50,7 @@ require 'dynamic/header.php'; ?>
 		   $total += $each['votes'];
 		}
 		var_dump($total);
+		var_dump($votes);
 
 ?>
 	<?php foreach ($db->query('SELECT id, firstname, lastname, votes, party FROM candidate') as $candidate) {
