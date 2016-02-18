@@ -15,9 +15,11 @@ else
 <?php require '../dynamic/header.php'; ?>
 <div>
 
-	<h1>Welcome to the homepage!</h1>
+	<h1>Homepage</h1>
+	
+	<h2>Welcome</h2>
 
-	<p>Your username is: <?php $username ?></p>
+	<p>Your username is: <?php echo $username ?></p>
 
 </div>
 
