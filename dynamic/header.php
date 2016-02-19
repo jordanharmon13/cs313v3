@@ -38,15 +38,17 @@
 
 		</ul>
 	</nav>-->
+	<nav>
 	<div class="dropdown">
-		<button class="dropbtn">Dropdown</button>
+		<button class="dropbtn">Menu</button>
 		<div class="dropdown-content">
 			<a href="../index.php">About Me</a>
 			<a href="../polls.php">Polls</a>
-			<a href="../assignments.php">Assignments/a>
+			<a href="../assignments.php">Assignments</a>
 			<a href="../cs-weeks/sign-out.php">Sign Out</a>
 	    </div>
 	</div>
+	</nav>
 	<?php
 } else { ?>
 	<!--<nav class="ddmenu">
@@ -60,14 +62,16 @@
 
 		</ul>
 	</nav>-->
+	<nav>
 	<div class="dropdown">
-		<button class="dropbtn">Dropdown</button>
+		<button class="dropbtn">Menu</button>
 		<div class="dropdown-content">
 			<a href="../index.php">About Me</a>
 			<a href="../polls.php">Polls</a>
-			<a href="../assignments.php">Assignments/a>
+			<a href="../assignments.php">Assignments</a>
 			<a href="../cs-weeks/sign-in.php">Sign In</a>
 			<a href="../cs-weeks/sign-up.php">Sign Up</a>
 	    </div>
 	</div>
+	</nav>
 <?php } ?>
