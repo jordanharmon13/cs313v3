@@ -22,7 +22,7 @@
     background-color: #111;
 } */
 .dropbtn, nav {
-    background-color: #0b66ba;
+    background-color: #2d9de1;
     color: white;
     padding: 16px;
     font-size: 16px;
@@ -63,5 +63,5 @@
 
 /* Change the background color of the dropdown button when the dropdown content is shown */
 .dropdown:hover .dropbtn {
-    background-color: #3e8e41;
+    background-color: #a2d1ee;
 }
