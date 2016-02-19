@@ -21,9 +21,8 @@
 .ddmenu li a:hover {
     background-color: #111;
 } */
-.dropbtn, 
-nav {
-    background-color: #4CAF50;
+.dropbtn, nav {
+    background-color: #2aecd3;
     color: white;
     padding: 16px;
     font-size: 16px;
