@@ -29,7 +29,7 @@
 <?php if (isset($_SESSION['username'])) {
 	$username = $_SESSION['username'];?>
 	
-	<nav class="ddmenu">
+	<!--<nav class="dropdown">
 		<ul>
 			<li id="about-me"><a href="../index.php">About Me</a></li>
 			<li id="polls"><a href="../polls.php">Polls</a></li>
@@ -37,10 +37,19 @@
 			<li id="log-in"><a href="../cs-weeks/sign-out.php">Sign Out</a></li>				
 
 		</ul>
-	</nav>
+	</nav>-->
+	<div class="dropdown">
+		<button class="dropbtn">Dropdown</button>
+		<div class="dropdown-content">
+			<a href="../index.php">About Me</a>
+			<a href="../polls.php">Polls</a>
+			<a href="../assignments.php">Assignments/a>
+			<a href="../cs-weeks/sign-out.php">Sign Out</a>
+	    </div>
+	</div>
 	<?php
 } else { ?>
-	<nav class="ddmenu">
+	<!--<nav class="ddmenu">
 		<ul>
 			<li id="about-me"><a href="../index.php">About Me</a></li>
 			<li id="polls"><a href="../polls.php">Polls</a></li>
@@ -50,5 +59,15 @@
 			
 
 		</ul>
-	</nav>
+	</nav>-->
+	<div class="dropdown">
+		<button class="dropbtn">Dropdown</button>
+		<div class="dropdown-content">
+			<a href="../index.php">About Me</a>
+			<a href="../polls.php">Polls</a>
+			<a href="../assignments.php">Assignments/a>
+			<a href="../cs-weeks/sign-in.php">Sign In</a>
+			<a href="../cs-weeks/sign-up.php">Sign Up</a>
+	    </div>
+	</div>
 <?php } ?>
