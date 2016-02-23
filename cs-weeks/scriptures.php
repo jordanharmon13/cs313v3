@@ -1,5 +1,8 @@
 <?php require ('scriptures_db.php'); ?>
-<?php require ('../dynamic/header.php') ?>
+<?php require ('../dynamic/header.php') 
+
+// scriptures.php 
+?>
 
 <div>
 	<h3>Week 5 Team Activity</h3>
